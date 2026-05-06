@@ -1,5 +1,5 @@
 /* ─── Design tokens ─────────────────────────────────────────────────── */
-:root {
+.pageShell {
   --bg: #fff9f5;
   --surface: #ffffff;
   --text: #2d3748;
@@ -18,10 +18,7 @@
   --radius-sm: 12px;
   --shadow-soft: 0 16px 40px rgba(255, 154, 162, 0.16);
   --shadow-card: 0 10px 24px rgba(45, 55, 72, 0.08);
-}
-
-/* ─── Page shell ─────────────────────────────────────────────────────── */
-.pageShell {
+  /* ─── Page shell ─────────────────────────────────────────────────────── */
   max-width: 1160px;
   margin: 0 auto;
   padding: 28px 20px 48px;

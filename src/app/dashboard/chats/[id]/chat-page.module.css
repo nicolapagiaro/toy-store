@@ -1,5 +1,5 @@
 /* Design tokens — shared with ad-page */
-:root {
+.pageShell {
   --emerald: #059669;
   --emerald-light: #d1fae5;
   --emerald-hover: #047857;
@@ -14,9 +14,6 @@
   --radius-xs: 8px;
   --shadow-card: 0 10px 24px rgba(45, 55, 72, 0.08);
   --shadow-emerald: 0 8px 24px rgba(5, 150, 105, 0.2);
-}
-
-.pageShell {
   max-width: 1160px;
   margin: 0 auto;
   padding: 28px 20px 48px;
