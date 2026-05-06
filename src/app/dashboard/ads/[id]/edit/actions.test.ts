@@ -103,6 +103,6 @@ describe("updateToyAdAction", () => {
     }
 
     expect(prisma.toyAd.update).toHaveBeenCalledTimes(1);
-    expect(redirect).toHaveBeenCalledWith("/dashboard/ads/ad-123");
+    expect(redirect).toHaveBeenCalledWith("/ads/ad-123");
   });
 });
