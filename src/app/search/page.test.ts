@@ -10,18 +10,10 @@ vi.mock("@/lib/prisma", () => ({
   },
 }));
 
-const mockGetPublicUrl = vi.fn((p: string) => ({
-  data: { publicUrl: `https://cdn.example.com/${p}` },
-}));
-
-vi.mock("@/lib/supabase/server", () => ({
-  createClient: vi.fn(async () => ({
-    storage: {
-      from: () => ({
-        getPublicUrl: mockGetPublicUrl,
-      }),
-    },
-  })),
+vi.mock("@/lib/media/toy-ad-images", () => ({
+  getToyAdSignedImages: vi.fn(async (paths: string[]) =>
+    paths.map((path) => ({ path, url: `https://cdn.example.com/${path}` }))
+  ),
 }));
 
 // CSS modules return a Proxy so any class name access yields the key string

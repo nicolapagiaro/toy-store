@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { searchToyAds } from "@/lib/toy-ads/search";
+import { getToyAdSignedImages } from "@/lib/media/toy-ad-images";
 import { prisma } from "@/lib/prisma";
-import { createClient } from "@/lib/supabase/server";
-import { MEDIA_BUCKET } from "@/lib/media/storage";
+import { searchToyAds } from "@/lib/toy-ads/search";
 import { SearchForm } from "./search-form";
 import styles from "./search.module.css";
 
@@ -58,15 +57,14 @@ export default async function SearchPage({
     }
   );
 
-  const supabase = await createClient();
+  const firstPaths = ads.map((ad) => ad.imagePaths[0]).filter((p): p is string => Boolean(p));
+  const signedImages = await getToyAdSignedImages(firstPaths);
+  const signedUrlByPath = Object.fromEntries(signedImages.map((img) => [img.path, img.url]));
 
-  const adsWithImages = ads.map((ad) => {
-    const firstPath = ad.imagePaths[0];
-    const imageUrl = firstPath
-      ? supabase.storage.from(MEDIA_BUCKET).getPublicUrl(firstPath).data.publicUrl
-      : undefined;
-    return { ...ad, imageUrl };
-  });
+  const adsWithImages = ads.map((ad) => ({
+    ...ad,
+    imageUrl: ad.imagePaths[0] ? signedUrlByPath[ad.imagePaths[0]] : undefined,
+  }));
 
   const resultsCount = adsWithImages.length;
 
