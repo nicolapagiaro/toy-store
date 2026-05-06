@@ -15,7 +15,11 @@ model User {
   image      String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  toyAds     ToyAd[]
+
+  toyAds             ToyAd[]
+  buyerConversations Conversation[] @relation("BuyerConversations")
+  ownerConversations Conversation[] @relation("OwnerConversations")
+  sentMessages       Message[]      @relation("SentMessages")
 
   @@map("users")
 }
@@ -51,8 +55,41 @@ model ToyAd {
   createdAt   DateTime       @default(now())
   updatedAt   DateTime       @updatedAt
 
-  owner User @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  owner         User           @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  conversations Conversation[]
 
   @@index([ownerId])
   @@map("toy_ads")
+}
+
+model Conversation {
+  id        String   @id @default(uuid())
+  toyAdId   String
+  buyerId   String
+  ownerId   String
+  createdAt DateTime @default(now())
+
+  toyAd    ToyAd     @relation(fields: [toyAdId], references: [id], onDelete: Cascade)
+  buyer    User      @relation("BuyerConversations", fields: [buyerId], references: [id], onDelete: Cascade)
+  owner    User      @relation("OwnerConversations", fields: [ownerId], references: [id], onDelete: Cascade)
+  messages Message[]
+
+  @@unique([toyAdId, buyerId])
+  @@index([buyerId])
+  @@index([ownerId])
+  @@map("conversations")
+}
+
+model Message {
+  id             String       @id @default(uuid())
+  conversationId String
+  senderId       String
+  content        String
+  createdAt      DateTime     @default(now())
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender       User         @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+  @@map("messages")
 }

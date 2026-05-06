@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-008 — Chat contestuale annuncio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+
+      <!-- Navigation -->
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <nav class="nav-links">
+          <a class="ghost-link" href="./index.html">Tutti i mockup</a>
+          <a class="ghost-link" href="./annuncio-pubblico.html">← Torna all'annuncio</a>
+        </nav>
+      </header>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="#">Dashboard</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="#">Le mie chat</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Giulia R. — Triciclo evolutivo</span>
+      </nav>
+
+      <!-- Chat layout: main column + sidebar -->
+      <div class="chat-layout">
+
+        <!-- Chat panel (full card) -->
+        <main>
+          <div class="panel chat-panel">
+
+            <!-- Ad reference card (sticky top) -->
+            <div class="ad-ref-card">
+              <div class="ad-ref-thumb"></div>
+              <div style="flex:1; min-width:0;">
+                <div class="ad-ref-label">Annuncio collegato</div>
+                <div class="ad-ref-title">Triciclo evolutivo 3 in 1 con cestino e cappottina</div>
+                <div class="ad-ref-meta">
+                  <span class="badge badge-accent" style="font-size:0.7rem; padding:2px 7px; margin-right:5px;">Ottime condizioni</span>
+                  <span class="badge badge-secondary" style="font-size:0.7rem; padding:2px 7px; margin-right:5px;">3–5 anni</span>
+                  Milano, Niguarda
+                </div>
+              </div>
+              <a href="./annuncio-pubblico.html" class="ad-ref-link">Vedi annuncio</a>
+            </div>
+
+            <!-- Messages list -->
+            <div class="messages-list">
+
+              <!-- Day separator -->
+              <div style="text-align:center; font-size:0.75rem; color:var(--muted-text); font-weight:700; margin: 4px 0;">
+                Oggi
+              </div>
+
+              <!-- Message from Giulia (other user) -->
+              <div class="message-group">
+                <div class="avatar avatar-pink avatar-sm">G</div>
+                <div>
+                  <div class="message-sender">Giulia Rossetti</div>
+                  <div class="message-bubble">
+                    Ciao! Ho visto che ti ha incuriosito il triciclo. È davvero in ottime condizioni, mio figlio lo ha usato solo una stagione.
+                  </div>
+                  <div class="message-meta">10:14</div>
+                </div>
+              </div>
+
+              <!-- Message from me (Marco) -->
+              <div class="message-group mine">
+                <div class="avatar avatar-teal avatar-sm">M</div>
+                <div>
+                  <div class="message-bubble">
+                    Ciao Giulia! Sì, mi interessa molto. Il cappottina è ancora integra? E il campanello funziona?
+                  </div>
+                  <div class="message-meta">10:17</div>
+                </div>
+              </div>
+
+              <!-- Message from Giulia -->
+              <div class="message-group">
+                <div class="avatar avatar-pink avatar-sm">G</div>
+                <div>
+                  <div class="message-sender">Giulia Rossetti</div>
+                  <div class="message-bubble">
+                    Sì, tutto funzionante! La cappottina si apre e si chiude senza problemi. Il campanello è quello originale. Posso mandare altre foto se vuoi.
+                  </div>
+                  <div class="message-meta">10:22</div>
+                </div>
+              </div>
+
+              <!-- Message from me -->
+              <div class="message-group mine">
+                <div class="avatar avatar-teal avatar-sm">M</div>
+                <div>
+                  <div class="message-bubble">
+                    Perfetto! Quando saresti disponibile per il ritiro? Sono libero sabato mattina o domenica pomeriggio.
+                  </div>
+                  <div class="message-meta">10:25</div>
+                </div>
+              </div>
+
+              <!-- Message from Giulia -->
+              <div class="message-group">
+                <div class="avatar avatar-pink avatar-sm">G</div>
+                <div>
+                  <div class="message-sender">Giulia Rossetti</div>
+                  <div class="message-bubble">
+                    Sabato mattina va benissimo. Diciamo dalle 10 alle 12? Sono in via Pelizza da Volpedo, zona Niguarda.
+                  </div>
+                  <div class="message-meta">10:31</div>
+                </div>
+              </div>
+
+              <!-- Message from me -->
+              <div class="message-group mine">
+                <div class="avatar avatar-teal avatar-sm">M</div>
+                <div>
+                  <div class="message-bubble">
+                    Ottimo, confermo sabato mattina verso le 10:30. Grazie!
+                  </div>
+                  <div class="message-meta">10:33</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Message input -->
+            <div class="message-input-area">
+              <div class="message-input-wrap">
+                <textarea placeholder="Scrivi un messaggio…" rows="1"></textarea>
+              </div>
+              <button class="btn-send" aria-label="Invia messaggio" title="Invia">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </div>
+
+          </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+
+          <!-- Other user info -->
+          <section class="panel seller-card" style="margin-bottom: 12px;">
+            <h3 class="side-title">Stai chattando con</h3>
+            <div class="seller-header">
+              <div class="avatar avatar-pink">G</div>
+              <div>
+                <div class="seller-name">Giulia Rossetti</div>
+                <div class="seller-meta">Membro da marzo 2025 · 4 annunci</div>
+              </div>
+            </div>
+            <div class="info-box">
+              Risponde mediamente entro 2 ore.
+            </div>
+          </section>
+
+          <!-- Ad summary in sidebar -->
+          <section class="panel side-card" style="margin-bottom: 12px;">
+            <h3 class="side-title">Annuncio di riferimento</h3>
+            <article style="border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; background:#fff; margin-top:4px;">
+              <div style="height:100px; background: linear-gradient(140deg, rgba(255,154,162,0.33), rgba(255,217,168,0.33)), repeating-linear-gradient(45deg, rgba(255,255,255,0.14) 0 12px, rgba(255,255,255,0.3) 12px 24px);"></div>
+              <div style="padding:10px 12px;">
+                <div class="badge-row" style="margin-bottom:6px;">
+                  <span class="badge badge-secondary">3–5 anni</span>
+                  <span class="badge badge-accent">Ottime condizioni</span>
+                </div>
+                <strong style="font-size:0.9rem;">Triciclo evolutivo 3 in 1 con cestino e cappottina</strong>
+                <p style="margin:6px 0 0; font-size:0.82rem; color:var(--muted-text);">Milano, Niguarda · #TS-2026-0017</p>
+              </div>
+            </article>
+            <a href="./annuncio-pubblico.html" class="btn btn-outline" style="width:100%; justify-content:center; margin-top:10px; font-size:0.88rem; padding:9px 14px;">
+              Apri annuncio completo
+            </a>
+          </section>
+
+          <!-- Safety tips -->
+          <section class="panel side-card">
+            <h3 class="side-title">Scambio sicuro</h3>
+            <ul class="hint-list">
+              <li>Incontra in un luogo pubblico</li>
+              <li>Controlla il giocattolo prima del ritiro</li>
+              <li>Non condividere dati personali via chat</li>
+            </ul>
+          </section>
+
+        </aside>
+      </div>
+
+    </div>
+  </body>
+</html>

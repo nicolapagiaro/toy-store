@@ -82,5 +82,5 @@ export async function updateToyAdAction(
     return { errors: result.errors as Record<string, string> };
   }
 
-  redirect(`/dashboard/ads/${adId}`);
+  redirect(`/ads/${adId}`);
 }

@@ -1,0 +1,814 @@
+/* ============================================================
+   shared.css — US-008: Chat contestuale da annuncio
+   Visual language: consistent with US-001 / US-002
+   Fonts: Baloo 2 (brand/headings) + Nunito (body)
+   ============================================================ */
+
+/* ------ Design tokens ------ */
+:root {
+  /* Core palette — identical to US-001/002 */
+  --bg: #fff9f5;
+  --surface: #ffffff;
+  --text: #2d3748;
+  --muted-text: #667085;
+  --primary: #ff9aa2;
+  --secondary: #b5ead7;
+  --accent: #ffd9a8;
+  --lavender: #c7ceea;
+  --purple-soft: #f5e6ff;
+  --danger: #fc8181;
+  --ok: #4fd1c5;
+  --warn: #f8c86b;
+
+  /* Chat-specific tokens (emerald per technical spec) */
+  --emerald: #059669;
+  --emerald-light: #d1fae5;
+  --emerald-mid: #6ee7b7;
+  --emerald-hover: #047857;
+
+  --border: rgba(45, 55, 72, 0.12);
+  --border-emerald: rgba(5, 150, 105, 0.28);
+
+  /* Radii */
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+
+  /* Shadows */
+  --shadow-soft: 0 16px 40px rgba(255, 154, 162, 0.16);
+  --shadow-card: 0 10px 24px rgba(45, 55, 72, 0.08);
+  --shadow-emerald: 0 8px 24px rgba(5, 150, 105, 0.2);
+}
+
+/* ------ Reset ------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ------ Base ------ */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 154, 162, 0.2), transparent 32%),
+    radial-gradient(circle at 90% 0%, rgba(181, 234, 215, 0.28), transparent 35%),
+    radial-gradient(circle at 80% 88%, rgba(199, 206, 234, 0.24), transparent 30%),
+    var(--bg);
+}
+
+/* ------ Layout primitives ------ */
+.page-shell {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+}
+
+/* ------ Navigation ------ */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.brand {
+  margin: 0;
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.3px;
+  background: linear-gradient(120deg, var(--primary), var(--lavender), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ghost-link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.75);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.ghost-link:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(45, 55, 72, 0.22);
+}
+
+/* ------ Cards / Panels ------ */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.hero-panel {
+  padding: 30px 30px 18px;
+  margin-bottom: 16px;
+  background:
+    linear-gradient(150deg, rgba(255, 154, 162, 0.24), rgba(255, 217, 168, 0.14)),
+    var(--surface);
+}
+
+.hero-title {
+  margin: 0 0 8px;
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  margin: 0 0 12px;
+  color: var(--muted-text);
+  max-width: 70ch;
+  line-height: 1.5;
+}
+
+/* ------ Chips ------ */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.chip-owner {
+  background: rgba(79, 209, 197, 0.2);
+  border-color: rgba(79, 209, 197, 0.45);
+}
+
+.chip-emerald {
+  background: rgba(5, 150, 105, 0.12);
+  border-color: rgba(5, 150, 105, 0.3);
+  color: var(--emerald);
+}
+
+.chip-warning {
+  background: rgba(252, 129, 129, 0.16);
+  border-color: rgba(252, 129, 129, 0.38);
+}
+
+.chip-info {
+  background: rgba(199, 206, 234, 0.28);
+  border-color: rgba(199, 206, 234, 0.5);
+}
+
+/* ------ Badges ------ */
+.badge {
+  font-size: 0.74rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.badge-secondary {
+  background: rgba(181, 234, 215, 0.35);
+}
+
+.badge-accent {
+  background: rgba(255, 217, 168, 0.42);
+}
+
+.badge-emerald {
+  background: var(--emerald-light);
+  color: var(--emerald);
+}
+
+.badge-row {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+/* ------ Buttons ------ */
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.15s, transform 0.1s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--primary), #ffaeb5);
+  color: #2d3748;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-success {
+  background: linear-gradient(120deg, #6ee7d8, #4fd1c5);
+  color: #163035;
+}
+
+.btn-emerald {
+  background: linear-gradient(120deg, var(--emerald), var(--emerald-hover));
+  color: #fff;
+  box-shadow: var(--shadow-emerald);
+  font-size: 1rem;
+  padding: 13px 26px;
+}
+
+.btn-emerald-sm {
+  background: linear-gradient(120deg, var(--emerald), var(--emerald-hover));
+  color: #fff;
+  box-shadow: var(--shadow-emerald);
+  padding: 10px 18px;
+  font-size: 0.9rem;
+}
+
+.btn-signin {
+  background: linear-gradient(120deg, var(--primary), #ffaeb5);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+  font-size: 1rem;
+  padding: 13px 26px;
+}
+
+.btn-disabled {
+  background: #e8eaef;
+  color: #8a94a7;
+  cursor: not-allowed;
+}
+
+/* ------ Form elements ------ */
+.form-panel {
+  padding: 24px;
+}
+
+.section-title {
+  margin: 0 0 18px;
+  font-size: 1.25rem;
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+}
+
+.section-heading {
+  display: inline-block;
+  margin: 0 0 14px;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  background: var(--purple-soft);
+  font-weight: 800;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fefefe;
+  color: var(--text);
+  font: inherit;
+  padding: 12px 13px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(5, 150, 105, 0.5);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+}
+
+/* ------ Action rows ------ */
+.action-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* ------ Side cards ------ */
+.side-card {
+  padding: 18px;
+  margin-bottom: 12px;
+}
+
+.side-title {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+}
+
+.hint-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted-text);
+  display: grid;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+/* ------ Breadcrumb ------ */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.breadcrumb a {
+  color: var(--muted-text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.breadcrumb a:hover {
+  color: var(--text);
+}
+
+.breadcrumb-sep {
+  opacity: 0.45;
+}
+
+/* ------ Ad detail — image area ------ */
+.ad-image-area {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background:
+    linear-gradient(140deg, rgba(255, 154, 162, 0.35), rgba(255, 217, 168, 0.35)),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.12) 0 14px, rgba(255, 255, 255, 0.25) 14px 28px);
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.ad-image-thumb-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.ad-image-thumb {
+  width: 72px;
+  height: 56px;
+  border-radius: var(--radius-xs);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(140deg, rgba(255, 154, 162, 0.28), rgba(255, 217, 168, 0.28)),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0 8px, rgba(255,255,255,0.2) 8px 16px);
+  cursor: pointer;
+}
+
+.ad-image-thumb.active {
+  border-color: var(--emerald);
+}
+
+/* ------ Ad info section ------ */
+.ad-info-panel {
+  padding: 28px;
+}
+
+.ad-title {
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+  font-size: 1.7rem;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.ad-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.88rem;
+  color: var(--muted-text);
+  font-weight: 600;
+}
+
+.meta-icon {
+  font-size: 1rem;
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+}
+
+.ad-description {
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0 0 22px;
+  font-size: 0.97rem;
+}
+
+/* ------ CTA box ------ */
+.cta-box {
+  border: 1px solid var(--border-emerald);
+  border-radius: var(--radius-md);
+  background: linear-gradient(150deg, rgba(5, 150, 105, 0.06), rgba(110, 231, 183, 0.08));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cta-box-title {
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--text);
+}
+
+.cta-box-hint {
+  margin: 0;
+  font-size: 0.87rem;
+  color: var(--muted-text);
+}
+
+/* ------ Auth prompt box ------ */
+.auth-prompt-box {
+  border: 1px solid rgba(255, 154, 162, 0.45);
+  border-radius: var(--radius-md);
+  background: linear-gradient(150deg, rgba(255, 154, 162, 0.1), rgba(255, 217, 168, 0.1));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-prompt-title {
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--text);
+}
+
+.auth-prompt-text {
+  margin: 0;
+  font-size: 0.87rem;
+  color: var(--muted-text);
+  line-height: 1.5;
+}
+
+/* ------ Owner edit link box ------ */
+.owner-box {
+  border: 1px solid rgba(79, 209, 197, 0.4);
+  border-radius: var(--radius-md);
+  background: rgba(79, 209, 197, 0.08);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.owner-box-text {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  font-weight: 600;
+}
+
+/* ------ Seller card ------ */
+.seller-card {
+  padding: 18px;
+}
+
+.seller-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.avatar-pink {
+  background: linear-gradient(135deg, var(--primary), var(--lavender));
+  color: #fff;
+}
+
+.avatar-teal {
+  background: linear-gradient(135deg, var(--ok), var(--secondary));
+  color: #163035;
+}
+
+.avatar-sm {
+  width: 34px;
+  height: 34px;
+  font-size: 0.85rem;
+}
+
+.seller-name {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.seller-meta {
+  font-size: 0.82rem;
+  color: var(--muted-text);
+}
+
+/* ------ Chat layout ------ */
+.chat-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  align-items: start;
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 220px);
+  min-height: 540px;
+  max-height: 740px;
+}
+
+/* Ad reference card inside chat */
+.ad-ref-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(150deg, rgba(5, 150, 105, 0.06), rgba(110, 231, 183, 0.06)),
+    var(--surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  flex-shrink: 0;
+}
+
+.ad-ref-thumb {
+  width: 60px;
+  height: 50px;
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+  background:
+    linear-gradient(140deg, rgba(255, 154, 162, 0.38), rgba(255, 217, 168, 0.38)),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0 8px, rgba(255,255,255,0.22) 8px 16px);
+}
+
+.ad-ref-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--emerald);
+  margin-bottom: 2px;
+}
+
+.ad-ref-title {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: 0 0 3px;
+}
+
+.ad-ref-meta {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  font-weight: 600;
+}
+
+.ad-ref-link {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--emerald);
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--border-emerald);
+  border-radius: 999px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Messages list */
+.messages-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.message-group {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.message-group.mine {
+  flex-direction: row-reverse;
+}
+
+.message-bubble {
+  max-width: 72%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.message-group:not(.mine) .message-bubble {
+  background: rgba(199, 206, 234, 0.25);
+  border: 1px solid rgba(199, 206, 234, 0.4);
+  border-bottom-left-radius: 4px;
+}
+
+.message-group.mine .message-bubble {
+  background: linear-gradient(135deg, var(--emerald-light), rgba(110, 231, 183, 0.3));
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  border-bottom-right-radius: 4px;
+  color: #1a3d34;
+}
+
+.message-meta {
+  font-size: 0.74rem;
+  color: var(--muted-text);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.message-group.mine .message-meta {
+  text-align: right;
+}
+
+.message-sender {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+/* Message input */
+.message-input-area {
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.message-input-wrap {
+  flex: 1;
+}
+
+.message-input-wrap textarea {
+  width: 100%;
+  border-radius: var(--radius-md);
+  padding: 10px 13px;
+  font: inherit;
+  font-size: 0.95rem;
+  min-height: 44px;
+  max-height: 120px;
+  resize: none;
+  overflow-y: auto;
+  line-height: 1.45;
+}
+
+.btn-send {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+  background: linear-gradient(135deg, var(--emerald), var(--emerald-hover));
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-emerald);
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.btn-send:hover {
+  opacity: 0.88;
+  transform: scale(1.05);
+}
+
+/* ------ Info/error/success boxes ------ */
+.info-box {
+  border: 1px solid rgba(79, 209, 197, 0.4);
+  background: rgba(79, 209, 197, 0.1);
+  color: #154946;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+}
+
+.warning-box {
+  border: 1px solid rgba(252, 129, 129, 0.45);
+  background: rgba(252, 129, 129, 0.1);
+  color: #7f1d1d;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+}
+
+/* ------ Responsive ------ */
+@media (max-width: 980px) {
+  .layout-grid,
+  .chat-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-panel {
+    height: 520px;
+  }
+}
+
+@media (max-width: 740px) {
+  .hero-title,
+  .ad-title {
+    font-size: 1.65rem;
+  }
+
+  .ad-image-thumb-row {
+    gap: 6px;
+  }
+
+  .ad-image-thumb {
+    width: 56px;
+    height: 44px;
+  }
+
+  .ad-ref-link {
+    display: none;
+  }
+}
