@@ -40,10 +40,12 @@ export default async function ToyAdDetailPage({ params }: { params: Promise<{ id
     ? new Intl.DateTimeFormat("it-IT", { dateStyle: "long", timeStyle: "short" }).format(ad.updatedAt)
     : null;
   const supabase = await createClient();
-  const images = ad.imagePaths.map((path) => ({
-    path,
-    url: supabase.storage.from(MEDIA_BUCKET).getPublicUrl(path).data.publicUrl,
-  }));
+  const images = await Promise.all(
+    ad.imagePaths.map(async (path) => {
+      const { data } = await supabase.storage.from(MEDIA_BUCKET).createSignedUrl(path, 3600);
+      return { path, url: data?.signedUrl ?? "" };
+    })
+  );
 
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-6 p-6">
