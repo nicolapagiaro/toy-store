@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-005 - Ricerca annunci (stato vuoto)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <a class="ghost-link" href="./index.html">Vedi risultati</a>
+      </header>
+
+      <!-- Search panel -->
+      <section class="panel search-panel">
+        <h2 class="search-title">Trova il giocattolo giusto</h2>
+        <p class="search-subtitle">Cerca tra gli annunci pubblicati dai genitori della tua zona.</p>
+
+        <div class="search-bar">
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input
+              class="search-input"
+              type="search"
+              placeholder="es. triciclo, lego, bici..."
+              value="monopattino elettrico"
+            />
+          </div>
+          <select class="filter-select">
+            <option value="">Tutte le fasce d'età</option>
+            <option value="AGE_0_2">0–2 anni</option>
+            <option value="AGE_3_5">3–5 anni</option>
+            <option value="AGE_6_8" selected>6–8 anni</option>
+            <option value="AGE_9_12">9–12 anni</option>
+          </select>
+          <button class="btn-search">Cerca</button>
+        </div>
+
+        <!-- Active filters -->
+        <div class="active-filters">
+          <span class="filter-label">Filtri attivi:</span>
+          <span class="filter-chip">
+            "monopattino elettrico"
+            <span class="filter-chip-remove">✕</span>
+          </span>
+          <span class="filter-chip">
+            6–8 anni
+            <span class="filter-chip-remove">✕</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Empty state -->
+      <div class="panel empty-state">
+        <span class="empty-icon">🔍</span>
+        <h3 class="empty-title">Nessun annuncio trovato</h3>
+        <p class="empty-subtitle">
+          Non ci sono annunci che corrispondono a <strong>"monopattino elettrico"</strong> nella fascia 6–8 anni.
+          Prova a modificare la parola chiave o a rimuovere i filtri.
+        </p>
+        <a class="btn-outline" href="./index.html">Rimuovi tutti i filtri</a>
+      </div>
+    </div>
+  </body>
+</html>

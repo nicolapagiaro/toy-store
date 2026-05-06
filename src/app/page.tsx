@@ -12,8 +12,14 @@ export default async function Home() {
           <p>Welcome, {user.name ?? user.email}!</p>
           <div className="flex gap-4">
             <Link
-              href="/dashboard"
+              href="/search"
               className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
+            >
+              Cerca giocattoli
+            </Link>
+            <Link
+              href="/dashboard"
+              className="border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex h-10 items-center justify-center rounded-md border px-4 py-2 text-sm font-medium"
             >
               Go to Dashboard
             </Link>
@@ -28,12 +34,20 @@ export default async function Home() {
           </div>
         </div>
       ) : (
-        <Link
-          href="/auth/signin"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
-        >
-          Sign In
-        </Link>
+        <div className="flex gap-4">
+          <Link
+            href="/search"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
+          >
+            Cerca giocattoli
+          </Link>
+          <Link
+            href="/auth/signin"
+            className="border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex h-10 items-center justify-center rounded-md border px-4 py-2 text-sm font-medium"
+          >
+            Sign In
+          </Link>
+        </div>
       )}
     </div>
   );

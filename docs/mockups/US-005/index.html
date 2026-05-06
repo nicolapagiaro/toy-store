@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-005 - Ricerca annunci con risultati</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <a class="ghost-link" href="./stato-vuoto.html">Vedi stato vuoto</a>
+      </header>
+
+      <!-- Search panel -->
+      <section class="panel search-panel">
+        <h2 class="search-title">Trova il giocattolo giusto</h2>
+        <p class="search-subtitle">Cerca tra gli annunci pubblicati dai genitori della tua zona.</p>
+
+        <div class="search-bar">
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input
+              class="search-input"
+              type="search"
+              placeholder="es. triciclo, lego, bici..."
+              value="triciclo"
+            />
+          </div>
+          <select class="filter-select">
+            <option value="">Tutte le fasce d'età</option>
+            <option value="AGE_0_2">0–2 anni</option>
+            <option value="AGE_3_5" selected>3–5 anni</option>
+            <option value="AGE_6_8">6–8 anni</option>
+            <option value="AGE_9_12">9–12 anni</option>
+          </select>
+          <button class="btn-search">Cerca</button>
+        </div>
+
+        <!-- Active filters -->
+        <div class="active-filters">
+          <span class="filter-label">Filtri attivi:</span>
+          <span class="filter-chip">
+            "triciclo"
+            <span class="filter-chip-remove">✕</span>
+          </span>
+          <span class="filter-chip">
+            3–5 anni
+            <span class="filter-chip-remove">✕</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <div class="results-header">
+        <p class="results-count">3 risultati <span>per "triciclo" · 3–5 anni</span></p>
+      </div>
+
+      <div class="results-grid">
+
+        <!-- Card 1 -->
+        <a class="ad-card" href="#">
+          <div class="ad-card-media"></div>
+          <div class="ad-card-body">
+            <div class="ad-badge-row">
+              <span class="badge badge-age">3–5 anni</span>
+              <span class="badge badge-condition">Ottime condizioni</span>
+            </div>
+            <h3 class="ad-title"><span class="highlight">Triciclo</span> evolutivo 3 in 1 con cestino</h3>
+            <p class="ad-city">📍 Milano – Niguarda</p>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a class="ad-card" href="#">
+          <div class="ad-card-media"></div>
+          <div class="ad-card-body">
+            <div class="ad-badge-row">
+              <span class="badge badge-age">3–5 anni</span>
+              <span class="badge badge-condition">Come nuovo</span>
+            </div>
+            <h3 class="ad-title"><span class="highlight">Triciclo</span> rosso vintage con cappellino parasole</h3>
+            <p class="ad-city">📍 Milano – Lambrate</p>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a class="ad-card" href="#">
+          <div class="ad-card-media"></div>
+          <div class="ad-card-body">
+            <div class="ad-badge-row">
+              <span class="badge badge-age">3–5 anni</span>
+              <span class="badge badge-condition">Buone condizioni</span>
+            </div>
+            <h3 class="ad-title">Bici senza pedali + <span class="highlight">triciclo</span> in regalo</h3>
+            <p class="ad-city">📍 Sesto San Giovanni</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </body>
+</html>
