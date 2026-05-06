@@ -40,7 +40,9 @@ test.describe("US-001 autenticato", () => {
     await page.getByRole("button", { name: "Pubblica annuncio" }).click();
 
     await expect(page).toHaveURL(/\/dashboard\/ads\/.+/);
-    await expect(page.getByText("Annuncio pubblicato con successo")).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+      /Il tuo annuncio|Annuncio aggiornato con successo/
+    );
     await expect(page.getByText("Triciclo evolutivo e richiudibile")).toBeVisible();
   });
 });

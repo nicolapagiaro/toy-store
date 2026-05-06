@@ -5,6 +5,11 @@ import { useActionState, useState } from "react";
 import { updateToyAdAction, type UpdateToyAdActionState } from "./actions";
 import styles from "./edit-ad.module.css";
 
+type AdImage = {
+  path: string;
+  url: string;
+};
+
 export type EditAdFormProps = {
   ad: {
     id: string;
@@ -14,8 +19,7 @@ export type EditAdFormProps = {
     condition: string;
     city: string;
     district: string | null;
-    imagePaths: string[];
-    imageUrls: string[];
+    images: AdImage[];
     updatedAt: string;
   };
 };
@@ -91,10 +95,10 @@ export function EditAdForm({ ad }: EditAdFormProps) {
             <input type="hidden" name="snapshotUpdatedAt" value={ad.updatedAt} />
 
             {/* Hidden fields for existing paths to keep */}
-            {ad.imagePaths
-              .filter((path) => !removedPaths.has(path))
-              .map((path) => (
-                <input key={path} type="hidden" name="existingImagePaths" value={path} />
+            {ad.images
+              .filter((image) => !removedPaths.has(image.path))
+              .map((image) => (
+                <input key={image.path} type="hidden" name="existingImagePaths" value={image.path} />
               ))}
 
             <h3 className={styles.sectionTitle}>Dettagli modificabili</h3>
@@ -212,11 +216,11 @@ export function EditAdForm({ ad }: EditAdFormProps) {
               </p>
 
               <div className={styles.photoGrid}>
-                {ad.imagePaths.map((path, idx) => {
-                  const isRemoved = removedPaths.has(path);
+                {ad.images.map((image, idx) => {
+                  const isRemoved = removedPaths.has(image.path);
                   return (
                     <div
-                      key={path}
+                      key={image.path}
                       className={`${styles.photoSlot} ${
                         isRemoved ? styles.photoSlotRemove : styles.photoSlotExisting
                       }`}
@@ -230,14 +234,14 @@ export function EditAdForm({ ad }: EditAdFormProps) {
                       </span>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
-                        src={ad.imageUrls[idx]}
+                        src={image.url}
                         alt={`Foto ${idx + 1}`}
                         style={{ width: "100%", borderRadius: 8, objectFit: "cover", height: 52 }}
                       />
                       <button
                         type="button"
                         className={styles.photoToggleBtn}
-                        onClick={() => toggleRemove(path)}
+                        onClick={() => toggleRemove(image.path)}
                       >
                         {isRemoved ? "Tieni" : "Rimuovi"}
                       </button>

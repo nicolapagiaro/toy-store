@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { MEDIA_BUCKET } from "@/lib/media/storage";
+import { getToyAdSignedImages } from "@/lib/media/toy-ad-images";
 import { prisma } from "@/lib/prisma";
-import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/user";
 
 const ageRangeLabels: Record<string, string> = {
@@ -39,13 +38,7 @@ export default async function ToyAdDetailPage({ params }: { params: Promise<{ id
   const updatedDate = wasUpdated
     ? new Intl.DateTimeFormat("it-IT", { dateStyle: "long", timeStyle: "short" }).format(ad.updatedAt)
     : null;
-  const supabase = await createClient();
-  const images = await Promise.all(
-    ad.imagePaths.map(async (path) => {
-      const { data } = await supabase.storage.from(MEDIA_BUCKET).createSignedUrl(path, 3600);
-      return { path, url: data?.signedUrl ?? "" };
-    })
-  );
+  const images = await getToyAdSignedImages(ad.imagePaths);
 
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-6 p-6">

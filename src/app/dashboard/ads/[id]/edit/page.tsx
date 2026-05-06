@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { getToyAdSignedImages } from "@/lib/media/toy-ad-images";
 import { prisma } from "@/lib/prisma";
-import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/user";
-import { MEDIA_BUCKET } from "@/lib/media/storage";
 import { EditAdForm } from "./edit-ad-form";
 import styles from "./edit-ad.module.css";
 
@@ -70,11 +69,7 @@ export default async function EditAdPage({ params }: { params: Promise<{ id: str
     );
   }
 
-  // Build public image URLs
-  const supabase = await createClient();
-  const imageUrls = ad.imagePaths.map(
-    (path) => supabase.storage.from(MEDIA_BUCKET).getPublicUrl(path).data.publicUrl
-  );
+  const images = await getToyAdSignedImages(ad.imagePaths);
 
   return (
     <EditAdForm
@@ -86,8 +81,7 @@ export default async function EditAdPage({ params }: { params: Promise<{ id: str
         condition: ad.condition,
         city: ad.city,
         district: ad.district,
-        imagePaths: ad.imagePaths,
-        imageUrls,
+        images,
         updatedAt: ad.updatedAt.toISOString(),
       }}
     />
