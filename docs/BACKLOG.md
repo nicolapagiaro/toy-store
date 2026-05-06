@@ -44,6 +44,7 @@
 #### US-001: Creare un annuncio completo di giocattolo
 
 **Epic:** EP-001 | **Priority:** HIGH | **Story Points:** 5
+**Status:** PLANNED
 
 **Story**
 As genitore registrato,

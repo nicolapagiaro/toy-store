@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-001 - Nuovo annuncio (errori contestuali)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <a class="ghost-link" href="./index.html">Torna al form vuoto</a>
+      </header>
+
+      <div class="layout-grid">
+        <main>
+          <section class="panel hero-panel">
+            <h2 class="hero-title">Completa i campi obbligatori</h2>
+            <p class="hero-subtitle">
+              Il sistema blocca la pubblicazione se mancano dati essenziali. Gli errori sono mostrati accanto ai singoli campi per correggere subito.
+            </p>
+            <div class="error-box">
+              Non e stato possibile pubblicare: inserisci titolo, fascia d'eta, condizione, localita e almeno una foto.
+            </div>
+          </section>
+
+          <section class="panel form-panel">
+            <h3 class="section-title">Nuovo annuncio (con errori)</h3>
+
+            <div class="form-section">
+              <h4 class="section-heading">Dati base</h4>
+              <div class="form-grid">
+                <div class="field field-full">
+                  <label for="titolo">Titolo <span class="required">*</span></label>
+                  <input id="titolo" class="error-input" placeholder="Es. Triciclo evolutivo 3 in 1" />
+                  <span class="inline-error">Inserisci un titolo per l'annuncio.</span>
+                </div>
+                <div class="field field-full">
+                  <label for="descrizione">Descrizione <span class="required">*</span></label>
+                  <textarea id="descrizione">Giocattolo usato poco, incluso cestino anteriore.</textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4 class="section-heading">Classificazione</h4>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="fasciaEta">Fascia d'eta <span class="required">*</span></label>
+                  <select id="fasciaEta" class="error-input">
+                    <option selected disabled>Seleziona fascia</option>
+                    <option>0-2 anni</option>
+                    <option>3-5 anni</option>
+                    <option>6-8 anni</option>
+                    <option>9-12 anni</option>
+                  </select>
+                  <span class="inline-error">Seleziona una fascia d'eta.</span>
+                </div>
+                <div class="field">
+                  <label for="condizione">Condizione <span class="required">*</span></label>
+                  <select id="condizione" class="error-input">
+                    <option selected disabled>Seleziona condizione</option>
+                    <option>Come nuovo</option>
+                    <option>Ottime condizioni</option>
+                    <option>Buone condizioni</option>
+                  </select>
+                  <span class="inline-error">Indica la condizione del giocattolo.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4 class="section-heading">Localita</h4>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="citta">Citta <span class="required">*</span></label>
+                  <input id="citta" class="error-input" placeholder="Es. Milano" />
+                  <span class="inline-error">Inserisci la citta del ritiro.</span>
+                </div>
+                <div class="field">
+                  <label for="quartiere">Quartiere / zona</label>
+                  <input id="quartiere" value="Niguarda" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4 class="section-heading">Foto del giocattolo</h4>
+              <div class="photo-dropzone">
+                <strong>Carica almeno una foto <span class="required">*</span></strong>
+                <div class="photo-grid">
+                  <div class="photo-slot">Foto principale</div>
+                  <div class="photo-slot">Foto dettaglio</div>
+                  <div class="photo-slot">+ Aggiungi</div>
+                  <div class="photo-slot">+ Aggiungi</div>
+                </div>
+                <div class="error-box">Aggiungi almeno una foto reale del giocattolo prima di pubblicare.</div>
+              </div>
+            </div>
+
+            <div class="action-row">
+              <button class="btn btn-outline">Salva bozza</button>
+              <a class="btn btn-primary" href="./annuncio-pubblicato.html" style="text-decoration: none;">Correggi e pubblica</a>
+            </div>
+          </section>
+        </main>
+
+        <aside>
+          <section class="panel side-card">
+            <h3 class="side-title">Perche questi errori?</h3>
+            <ul class="hint-list">
+              <li>Dati minimi necessari per fiducia e chiarezza</li>
+              <li>La foto riduce ambiguita e richieste in chat</li>
+              <li>Localita necessaria per organizzare ritiro/scambio</li>
+            </ul>
+          </section>
+
+          <section class="panel side-card">
+            <h3 class="side-title">Stato validazione</h3>
+            <p style="margin: 0; color: var(--muted-text); font-size: 0.92rem;">
+              5 errori bloccanti rilevati lato client. La stessa regola e applicata lato server in fase di pubblicazione.
+            </p>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
