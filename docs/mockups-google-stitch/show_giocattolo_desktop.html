@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-secondary-fixed-variant": "#1d4d56",
+                  "on-secondary": "#ffffff",
+                  "on-primary": "#ffffff",
+                  "on-tertiary-container": "#664d00",
+                  "tertiary-container": "#e4c067",
+                  "on-surface-variant": "#3f4946",
+                  "surface-container-highest": "#e4e2e1",
+                  "surface-container-lowest": "#ffffff",
+                  "secondary-container": "#b9e7f3",
+                  "background": "#fbf9f8",
+                  "on-primary-fixed": "#00201b",
+                  "surface-tint": "#146a5c",
+                  "outline-variant": "#bec9c5",
+                  "on-tertiary": "#ffffff",
+                  "surface-bright": "#fbf9f8",
+                  "on-tertiary-fixed": "#251a00",
+                  "on-surface": "#1b1c1c",
+                  "on-secondary-fixed": "#001f25",
+                  "inverse-surface": "#303030",
+                  "surface-container": "#f0eded",
+                  "tertiary": "#765b06",
+                  "primary-fixed-dim": "#89d5c4",
+                  "outline": "#6f7976",
+                  "secondary": "#38656f",
+                  "surface-dim": "#dcd9d9",
+                  "on-secondary-container": "#3c6973",
+                  "secondary-fixed-dim": "#a0ced9",
+                  "tertiary-fixed": "#ffdf96",
+                  "inverse-on-surface": "#f3f0f0",
+                  "tertiary-fixed-dim": "#e7c269",
+                  "primary-fixed": "#a4f1df",
+                  "primary-container": "#86d2c1",
+                  "on-error": "#ffffff",
+                  "inverse-primary": "#89d5c4",
+                  "on-tertiary-fixed-variant": "#594400",
+                  "on-primary-fixed-variant": "#005045",
+                  "on-background": "#1b1c1c",
+                  "surface-variant": "#e4e2e1",
+                  "surface-container-low": "#f6f3f2",
+                  "error": "#ba1a1a",
+                  "primary": "#146a5c",
+                  "surface-container-high": "#eae8e7",
+                  "secondary-fixed": "#bceaf6",
+                  "surface": "#fbf9f8",
+                  "on-primary-container": "#005c4f",
+                  "on-error-container": "#93000a",
+                  "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "md": "24px",
+                  "gutter": "24px",
+                  "container-max": "1280px",
+                  "base": "8px",
+                  "lg": "48px",
+                  "xs": "4px",
+                  "xl": "80px",
+                  "sm": "12px"
+          },
+          "fontFamily": {
+                  "h2": ["Plus Jakarta Sans"],
+                  "body-sm": ["Inter"],
+                  "body-md": ["Inter"],
+                  "body-lg": ["Inter"],
+                  "label-caps": ["Inter"],
+                  "h3": ["Plus Jakarta Sans"],
+                  "h1": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+                  "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                  "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                  "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell -->
+<header class="bg-surface sticky top-0 z-50 shadow-sm md:shadow-none border-b border-surface-container">
+<div class="flex justify-between items-center px-gutter py-sm w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-md">
+<span class="font-h3 text-h3 font-bold text-primary">Toy Store</span>
+</div>
+<div class="hidden md:flex flex-1 max-w-xl mx-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-[48px] pl-12 pr-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary transition-all outline-none text-body-md" placeholder="Cerca giocattoli, brand o categorie..." type="text"/>
+</div>
+</div>
+<nav class="flex items-center gap-base">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-primary-fixed overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional profile headshot of a friendly parent smiling warmly against a soft-focus garden background. The lighting is bright and natural, emphasizing a trustworthy and community-oriented personality. The color palette is composed of soft earth tones and vibrant greens, aligning with a sustainable and joyful brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwWDyJXPVUH0T-Cqbjw5mrlr6bZsLqvW4BL_8fADIacnRzvWY1D7lNQ5xflCBbi8O20Xl5bBVJ4X-1zl7OgPxlGASgcvfkElHiRwcKep0IkU3xpdi37NTg9m8Tas1YAW6009om6Tjv_BLSPv1fwDKrgij3SO6k1jWb6Ntrpw00K91qNkF8I_815xt8lA9VWhAFMkWNjWew6Ql8U9qjsGnPZ8VnUvux1DWO-Yu1fZXa8wFxgwnL7VE2kSBPA2alOknG4b6tqhE6Yq0"/>
+</div>
+</nav>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-md lg:py-lg">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-xs text-on-surface-variant font-label-caps mb-gutter">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Giocattoli in Legno</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Castello Medievale Eco-friendly</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-start">
+<!-- Left Column: Image Gallery -->
+<div class="lg:col-span-7 flex flex-col gap-md">
+<div class="relative aspect-square w-full bg-white rounded-[32px] overflow-hidden shadow-md group">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up of a handcrafted wooden toy castle set against a clean, soft blue background. The wood grain is visible and warm, illuminated by gentle, diffused sunlight from a nearby window. The scene feels premium, tactile, and eco-conscious, reflecting high-quality craftsmanship and a joyful, safe atmosphere for children's play." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ2Lho9JuW582UC_BnJtj8K0Q6A4xxAYod2QLocKOjwrjMAolmn431vTqEpyT-g-6ahILfycP5b9Kgokl4llJAkJ3zY2_2Ux-hX2htrJc3u3qAyq0Zx-Emw1WnMQS1btPeDcQph3sGz2qwjTsJOzVeSZPaDH6PZa8QGu8XCHGzBl1hKKnBIqekBe9494td776oMLLpIao_f4RBfvvcqeJwIInCV89A61Ltr_jjvy5q2alURpxkJuvOp6g6lkfWvPL_JpfY1MHPtDw"/>
+<button class="absolute top-md right-md bg-white/80 backdrop-blur-md p-3 rounded-full shadow-sm hover:bg-white transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex gap-md overflow-x-auto pb-2 scrollbar-hide">
+<div class="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden border-2 border-primary ring-2 ring-primary-container ring-offset-2">
+<img class="w-full h-full object-cover" data-alt="A side view of the wooden castle showing intricate window details and towers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2lkqXx7LrE7lhbRtchzuyX0xL9p6O9MZIHccGWyHIKYyCxDOJOrJXgejK_jwJ9fRnH6Tcn7dDC9ewtiyf2e7svBtlAQfKdA0RFQjQy6v3-1qHYqIOroLdPOc0K0JcUTPcOuEU2drhJ9sgs-FeOMKz0FJuxER3AljJGuY8NZNUIrDIw035188UBhUE9om0RyrVuDou3hR49CjRy8ZZgJq0GdpW0qJ0rYTzvoDJVVdy8l4mdq7vuf9ss1jK0EkpEoT9Loebi5SO1S4"/>
+</div>
+<div class="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden hover:opacity-80 transition-opacity cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A close-up of the wooden knights and characters included in the playset." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeBhVpYA9fidrven9JHqNqLzIuxOEZLfy01D1OpNLeVgFQUfP6Mny4xGIymOoZDPdaWJA5R1YZs3fu2_Xz89QOjH2scF3i0HGWQKGtnSzanxoXm-n9jdvKtnfxMD_0kvRXoBufIkRDjGql3hz0VurGv8HMq8S3QazWs3Ct2rZPibWIXgrOrwDx0XqpVP_orJWf3NxCbj6TXUqs6Pbo08pqh6n-f8wHgG9VHvguFb19dheH9W3BU3KhER7xfDhUnLUAYoaZ-3EIWb4"/>
+</div>
+<div class="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden hover:opacity-80 transition-opacity cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="The packaging of the toy, highlighting its recycled cardboard material and sustainable branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_76RDL0RYY7g918y3U1WBr9shZIKPQTKf_QTMO2elBnyQDM9MdCA6bzqeLvjlVe_v6e8FN-LrY5t9s56IZGoix_lAbwgWZxIM9kK1ViPAwisgNzuG_3gTnljSj04o5N3Ep2YMd5A-M42oOgpJMr6rTibSnJZ0YoQRm718CBBmgc5ybCSaBRSa9ov0O-u2inZoCk8kYH0Slv189zFcXHmdTi7w38OG9BnAIj_fbCCpj_Vnf8QifbEgr0ZzESX77QnBug7JYZo0tyk"/>
+</div>
+<div class="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden hover:opacity-80 transition-opacity cursor-pointer bg-surface-container flex items-center justify-center border-2 border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-outline-variant" data-icon="add_a_photo">add_a_photo</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Product Info -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<section class="flex flex-col gap-sm">
+<div class="flex gap-xs flex-wrap">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps rounded-full text-xs">OTTIME CONDIZIONI</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container font-label-caps rounded-full text-xs">ETÀ 3+ ANNI</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface leading-tight">Castello Medievale in Legno Certificato</h1>
+<div class="flex items-baseline gap-md">
+<p class="font-h2 text-h2 text-primary">€35.00</p>
+<span class="text-on-surface-variant font-body-md italic">oppure Scambio Disponibile</span>
+</div>
+</section>
+<section class="p-gutter bg-white rounded-3xl shadow-sm border border-surface-container">
+<h3 class="font-h3 text-h3 mb-sm">Descrizione</h3>
+<p class="text-on-surface-variant leading-relaxed">
+            Bellissimo castello medievale interamente realizzato in legno di faggio sostenibile. Il set include il ponte levatoio funzionante, 4 torri rimovibili e 6 personaggi dipinti a mano con vernici atossiche all'acqua. Perfetto per stimolare la fantasia e il gioco simbolico. Usato pochissimo, come nuovo, privo di graffi o segni di usura. Confezione originale inclusa.
+          </p>
+</section>
+<!-- Seller Profile Box -->
+<section class="p-gutter bg-surface-container-low rounded-3xl flex flex-col gap-md">
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Avatar of Sarah, a trusted community member. A friendly portrait with warm lighting and a soft-focus living room background, creating a safe and reliable impression for other parents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0rDBVQA4_eaGvFh5tFpUhUSm1UdQBCK_44hbfGdpnMTvMkp5bCOFvIIXNNBUx3m5wiWFPyTHbj0fPbzPorzwJuFNTDlxSfV1729ecJ1ZHkyZB8eAGtSONR0WnXOgK0VjNwF0Dge2ns3MvCspX7t6GX6OTrnC4vHv7OEZrvH8XYNc-ti0f8iyTj2j8brjAwFJ6PvKZzN5VeCmXHMftXeZ_sxicRA1miUF7s2XneeEkiWmwD--I4pGpf20WCVKhsoUNrJEn3qpNjUI"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-xs">
+<span class="font-h3 text-[18px] text-on-surface">Sarah M.</span>
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="verified" data-weight="fill">verified</span>
+</div>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-caps">4.9 (24 recensioni)</span>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Identità Verificata</span>
+</div>
+<div class="grid grid-cols-2 gap-md mt-sm">
+<button class="flex flex-col items-center justify-center gap-1 p-4 bg-primary text-white rounded-2xl hover:opacity-90 active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-caps">Invia Messaggio</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-4 bg-secondary text-white rounded-2xl hover:opacity-90 active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined" data-icon="swap_horizontal_circle">swap_horizontal_circle</span>
+<span class="font-label-caps">Proponi Scambio</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+<!-- Related Products Section -->
+<section class="mt-xl">
+<div class="flex justify-between items-end mb-gutter">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface">Potrebbe interessarti</h2>
+<p class="text-on-surface-variant font-body-md">Altri tesori scelti per te nella tua zona</p>
+</div>
+<button class="text-primary font-label-caps flex items-center gap-xs hover:underline">
+          Vedi tutti <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A set of colorful wooden building blocks arranged in a playful tower. The lighting is bright and cheerful, with a soft pastel green background. The style is clean and modern, highlighting the tactile quality and safety of the toy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD21bXwCxSLsjux1vttUQyS7Gok9n3UABd99tZnWycyMf9_t_D3N4GssoUpI51pWqM8CchlEFDw3k9dKbacuQlnbKCFXipJmBc1GpYTSNXZ5fgam0xBGlNtHV7Gixxrys6PUHsQcZYPHRLBIKSDGN9a9tU-RAAf9OxDvI_BNj6QD0qoqXkIcXA9qf5NHxe3q1gZTxhNj4V5s2J9izk4sdcMqdw5Ryo7gnRCz-sRdwfzbNgNwRuZVyIOTsGYUYAt3i4hx8jQLm9rves"/>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg text-[10px] font-bold text-primary">NUOVO</span>
+</div>
+<div class="p-md">
+<h4 class="font-h3 text-[16px] mb-xs line-clamp-1">Blocchi Costruzioni Arcobaleno</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">€18.00</span>
+<span class="text-on-surface-variant text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Milano
+              </span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist wooden puzzle depicting various animals. The pieces are chunky and easy for toddlers to hold. Soft studio lighting creates gentle shadows on a cream background, conveying a high-end, educational feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcvi7JHPZvh25ojPfjoI6UYlPiZiA9IY-LfObhotW1wztnZejftzLxrH1cIE5aOv1QvpxfDL2y0UJY808QtKPzjBrg28ksCN22QOt7QFMUxWEsScAmt6XEaXG0P-bHONvqOMaoQ4e5PLfOavNeXNwcwL-ZmtYSXD9dgv_w2UH1nE0dm1Oa64dSogjLqwmFEWItDKay_nMId3fV5THe0cppgfTk8pKqmQKs_luaKk0DvA_wb-HZKfZgGnWgV8spT6_rhqHHPkmaJ6E"/>
+<span class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-2 py-1 rounded-lg text-[10px] font-bold">SCAMBIO</span>
+</div>
+<div class="p-md">
+<h4 class="font-h3 text-[16px] mb-xs line-clamp-1">Puzzle Animali della Foresta</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">Scambio</span>
+<span class="text-on-surface-variant text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Monza
+              </span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vintage-style metal pedal car in a soft cream color. It sits on a polished wooden floor in a minimalist nursery. The lighting is warm and cinematic, suggesting a premium, collectible heirloom toy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTlXLgvPJgyBSNCuJGwjcQq-UpHWk_RlzxXsBDx_sEaTAsKHdAhkZ_zCI3qS-vLS7zFLlF1969H2q_Ld1ZwgJb2Y6tSdyRObUFYeq1GmtQj-7LXI9RUZim4ciLwLhfLxLjV3SYh0zYt_fy2vhzz0vJQb6ne7_z53dXy5ueHaA7m3Q-oFMordmX6f1HnvUsM6wcxYQyjNOK-KkkW9TLOOHBcubyE_Z52hxICVz03mbYB0dflS5InTP2JKNxvZONQIROtRrNEl9nNgo"/>
+</div>
+<div class="p-md">
+<h4 class="font-h3 text-[16px] mb-xs line-clamp-1">Macchinina Vintage a Pedali</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">€45.00</span>
+<span class="text-on-surface-variant text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Bergamo
+              </span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A soft, hand-knitted organic cotton teddy bear sitting on a linen blanket. The colors are muted beiges and soft blues. The scene is cozy and comforting, shot with a shallow depth of field in soft evening light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMsttBYhQmDiKFEYh2cqAmkH2UGmWCL-cNPx6N0puRXWYe91ZWx_rnTd6NIwdWph9gGECWJBv8svzG7f2AHEygOuRbIcXAPQrQ3NYH6BOYPpLox83p2ukSaA2937P-QsQFjGgDnEBf4sKrUs0U_nDNZ-69tJliAT-PGDK6usXYWzmhg5NVSOfEqzdKmYtWVP21I3sl29yayf_obTM_L1mSis-TuazOe9G5e2JoHTSBVWSqXjaQgckmmEFZHbzuRik9ADM7iV51Nfk"/>
+</div>
+<div class="p-md">
+<h4 class="font-h3 text-[16px] mb-xs line-clamp-1">Orsetto in Cotone Organico</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">€12.00</span>
+<span class="text-on-surface-variant text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Como
+              </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container mt-xl py-xl">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<div class="font-h3 text-h3 font-bold text-primary mb-md">Toy Store</div>
+<p class="text-on-surface-variant max-w-lg mx-auto mb-gutter">
+        La prima community dedicata al riuso consapevole dei giocattoli. <br/>
+        Sostenibile, sicuro, felice.
+      </p>
+<div class="flex justify-center gap-md text-outline">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Termini</a>
+<a class="hover:text-primary transition-colors" href="#">Contatti</a>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest flex justify-around items-center px-4 pb-base pt-2 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-2 hover:bg-secondary-container transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-2 hover:bg-secondary-container transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-caps text-label-caps mt-1">Messages</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-2 hover:bg-secondary-container transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="swap_horizontal_circle">swap_horizontal_circle</span>
+<span class="font-label-caps text-label-caps mt-1">Swaps</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-2 hover:bg-secondary-container transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

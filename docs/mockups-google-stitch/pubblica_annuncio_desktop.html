@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-secondary-fixed-variant": "#1d4d56",
+                  "on-secondary": "#ffffff",
+                  "on-primary": "#ffffff",
+                  "on-tertiary-container": "#664d00",
+                  "tertiary-container": "#e4c067",
+                  "on-surface-variant": "#3f4946",
+                  "surface-container-highest": "#e4e2e1",
+                  "surface-container-lowest": "#ffffff",
+                  "secondary-container": "#b9e7f3",
+                  "background": "#fbf9f8",
+                  "on-primary-fixed": "#00201b",
+                  "surface-tint": "#146a5c",
+                  "outline-variant": "#bec9c5",
+                  "on-tertiary": "#ffffff",
+                  "surface-bright": "#fbf9f8",
+                  "on-tertiary-fixed": "#251a00",
+                  "on-surface": "#1b1c1c",
+                  "on-secondary-fixed": "#001f25",
+                  "inverse-surface": "#303030",
+                  "surface-container": "#f0eded",
+                  "tertiary": "#765b06",
+                  "primary-fixed-dim": "#89d5c4",
+                  "outline": "#6f7976",
+                  "secondary": "#38656f",
+                  "surface-dim": "#dcd9d9",
+                  "on-secondary-container": "#3c6973",
+                  "secondary-fixed-dim": "#a0ced9",
+                  "tertiary-fixed": "#ffdf96",
+                  "inverse-on-surface": "#f3f0f0",
+                  "tertiary-fixed-dim": "#e7c269",
+                  "primary-fixed": "#a4f1df",
+                  "primary-container": "#86d2c1",
+                  "on-error": "#ffffff",
+                  "inverse-primary": "#89d5c4",
+                  "on-tertiary-fixed-variant": "#594400",
+                  "on-primary-fixed-variant": "#005045",
+                  "on-background": "#1b1c1c",
+                  "surface-variant": "#e4e2e1",
+                  "surface-container-low": "#f6f3f2",
+                  "error": "#ba1a1a",
+                  "primary": "#146a5c",
+                  "surface-container-high": "#eae8e7",
+                  "secondary-fixed": "#bceaf6",
+                  "surface": "#fbf9f8",
+                  "on-primary-container": "#005c4f",
+                  "on-error-container": "#93000a",
+                  "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "md": "24px",
+                  "gutter": "24px",
+                  "container-max": "1280px",
+                  "base": "8px",
+                  "lg": "48px",
+                  "xs": "4px",
+                  "xl": "80px",
+                  "sm": "12px"
+          },
+          "fontFamily": {
+                  "h2": ["Plus Jakarta Sans"],
+                  "body-sm": ["Inter"],
+                  "body-md": ["Inter"],
+                  "body-lg": ["Inter"],
+                  "label-caps": ["Inter"],
+                  "h3": ["Plus Jakarta Sans"],
+                  "h1": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+                  "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                  "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                  "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<header class="bg-surface dark:bg-surface-dim sticky top-0 z-50">
+<div class="flex justify-between items-center px-gutter py-sm w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary font-bold text-h3" data-icon="toys">toys</span>
+<h1 class="font-h3 text-h3 font-bold text-primary dark:text-primary-fixed">Toy Store</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="search">search</button>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border-2 border-surface-container-high">
+<img alt="Parent Profile" class="w-full h-full object-cover" data-alt="A professional and friendly portrait of a young parent with a warm smile, captured in soft, natural indoor lighting. The setting is a clean, modern home environment with a blurred background of a bookshelf. The overall aesthetic is bright, minimalist, and trustworthy, using a soft color palette consistent with a community-focused toy marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYgjyjIhphgtsVmqv_K30lOFmXSxB40zgVKeti2WVbdYbO4cdAN5KogqSYgVLMJnabG7gAw1WIm50aOQBRFjVP3qcyzAtzILSzYjHI6cYQ9hpZ-FRYw9YdB-SavdOpw_2yADOkAYW9TPJKL6OPYD1mvys-_FA9Tc2FnYtoorDlXV6XBdj-FZDUg7HSNjwVZ1kXF-ylATkRI_zLuAJmrV3WhDO9xaLDzyskesqOTip9bRYNdAzhqknrn76Raz-4hprMmGZzvTlAmU4"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[900px] mx-auto px-gutter py-lg pb-[120px]">
+<div class="mb-lg">
+<h2 class="font-h1 text-h1 text-on-surface mb-sm">Pubblica un nuovo annuncio</h2>
+<p class="text-on-surface-variant text-body-lg">Dai una nuova vita ai giocattoli che non usi più. Facile, veloce e sostenibile.</p>
+</div>
+<section class="mb-lg">
+<div class="bg-surface-container-lowest rounded-xl border-2 border-dashed border-outline-variant p-lg flex flex-col items-center justify-center min-h-[320px] transition-all hover:border-primary group">
+<div class="bg-secondary-container rounded-full p-md mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container text-[40px]" data-icon="add_a_photo">add_a_photo</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Carica le foto del giocattolo</h3>
+<p class="text-on-surface-variant mb-md text-center">Trascina qui le tue foto o clicca per sfogliare.<br/>Massimo 10 foto, formato JPG o PNG.</p>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-xl font-bold shadow-md hover:opacity-90 transition-all active:scale-95">Seleziona file</button>
+</div>
+</section>
+<div class="space-y-lg">
+<div class="bg-white rounded-xl p-lg shadow-sm border border-surface-container-high">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="assignment">assignment</span>
+<h3 class="font-h3 text-h3">Dati del Giocattolo</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="md:col-span-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">TITOLO ANNUNCIO</label>
+<input class="w-full h-[56px] px-md rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md transition-all" placeholder="Es: Set Costruzioni in Legno Montessori" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">CATEGORIA</label>
+<select class="w-full h-[56px] px-md rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-white text-body-md">
+<option>Giochi in legno</option>
+<option>Educativi</option>
+<option>Costruzioni</option>
+<option>Peluche</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">ETÀ CONSIGLIATA</label>
+<select class="w-full h-[56px] px-md rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-white text-body-md">
+<option>0-2 anni</option>
+<option>3-5 anni</option>
+<option>6-8 anni</option>
+<option>9+ anni</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">DESCRIZIONE</label>
+<textarea class="w-full p-md rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md transition-all resize-none" placeholder="Descrivi il giocattolo, le sue caratteristiche e perché è speciale..." rows="4"></textarea>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-lg shadow-sm border border-surface-container-high">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="stars">stars</span>
+<h3 class="font-h3 text-h3">Condizioni</h3>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<label class="cursor-pointer group">
+<input class="hidden peer" name="condition" type="radio"/>
+<div class="flex flex-col items-center justify-center p-md border-2 border-surface-container rounded-xl peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all group-hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-on-surface-variant mb-xs" data-icon="new_releases">new_releases</span>
+<span class="font-label-caps text-label-caps">NUOVO</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input checked="" class="hidden peer" name="condition" type="radio"/>
+<div class="flex flex-col items-center justify-center p-md border-2 border-surface-container rounded-xl peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all group-hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-on-surface-variant mb-xs" data-icon="sentiment_very_satisfied">sentiment_very_satisfied</span>
+<span class="font-label-caps text-label-caps text-center">COME NUOVO</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="condition" type="radio"/>
+<div class="flex flex-col items-center justify-center p-md border-2 border-surface-container rounded-xl peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all group-hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-on-surface-variant mb-xs" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-caps text-label-caps">BUONO</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="condition" type="radio"/>
+<div class="flex flex-col items-center justify-center p-md border-2 border-surface-container rounded-xl peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all group-hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-on-surface-variant mb-xs" data-icon="history">history</span>
+<span class="font-label-caps text-label-caps">USATO</span>
+</div>
+</label>
+</div>
+</div>
+<div class="bg-white rounded-xl p-lg shadow-sm border border-surface-container-high">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="currency_exchange">currency_exchange</span>
+<h3 class="font-h3 text-h3">Metodo (Scambio/Vendita)</h3>
+</div>
+<div class="space-y-md">
+<div class="flex gap-md">
+<label class="flex-1 cursor-pointer">
+<input checked="" class="hidden peer" type="checkbox"/>
+<div class="flex items-center gap-md p-md border-2 border-surface-container rounded-xl peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all">
+<div class="bg-secondary-container p-sm rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="swap_horizontal_circle">swap_horizontal_circle</span>
+</div>
+<div>
+<span class="block font-h3 text-body-lg font-bold">Disponibile allo Scambio</span>
+<span class="text-body-sm text-on-surface-variant">Preferito per questo annuncio</span>
+</div>
+</div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="flex items-center gap-md p-md border-2 border-surface-container rounded-xl peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all">
+<div class="bg-tertiary-container/30 p-sm rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="payments">payments</span>
+</div>
+<div>
+<span class="block font-h3 text-body-lg font-bold">In Vendita</span>
+<span class="text-body-sm text-on-surface-variant">Definisci un prezzo equo</span>
+</div>
+</div>
+</label>
+</div>
+<div class="pt-sm border-t border-surface-container-high">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">PREZZO INDICATIVO (€)</label>
+<div class="relative max-w-[200px]">
+<span class="absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">€</span>
+<input class="w-full h-[56px] pl-[40px] pr-md rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md transition-all" placeholder="0.00" type="number"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 w-full bg-surface-container-lowest shadow-[0_-4px_20px_rgba(0,0,0,0.08)] py-md px-gutter z-50">
+<div class="max-w-[900px] mx-auto flex justify-between items-center">
+<div class="hidden md:flex flex-col">
+<span class="text-body-sm text-on-surface-variant">Stai creando:</span>
+<span class="font-bold text-on-surface">Nuovo annuncio giocattolo</span>
+</div>
+<div class="flex gap-md w-full md:w-auto">
+<button class="flex-1 md:flex-none px-lg py-sm rounded-xl border-2 border-outline font-bold text-on-surface-variant hover:bg-surface-container transition-all active:scale-95">
+          Salva Bozza
+        </button>
+<button class="flex-[2] md:flex-none bg-primary text-on-primary px-xl py-sm rounded-xl font-bold shadow-lg shadow-primary/20 hover:opacity-90 transition-all active:scale-95">
+          Pubblica ora
+        </button>
+</div>
+</div>
+</footer>
+<nav class="fixed bottom-0 left-0 w-full z-[60] flex justify-around items-center px-4 pb-base pt-2 md:hidden bg-surface-container-lowest dark:bg-surface-container-high shadow-md rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant px-4 py-2 hover:bg-secondary-container transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant px-4 py-2 hover:bg-secondary-container transition-all">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-caps text-label-caps">Messages</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 scale-90 transition-transform duration-150 ease-out">
+<span class="material-symbols-outlined" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-caps text-label-caps">Crea</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant px-4 py-2 hover:bg-secondary-container transition-all">
+<span class="material-symbols-outlined" data-icon="swap_horizontal_circle">swap_horizontal_circle</span>
+<span class="font-label-caps text-label-caps">Swaps</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant px-4 py-2 hover:bg-secondary-container transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps">Profile</span>
+</div>
+</nav>
+</body></html>

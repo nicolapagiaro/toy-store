@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Toy Store - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-h1, .font-h2, .font-h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#1d4d56",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#664d00",
+                      "tertiary-container": "#e4c067",
+                      "on-surface-variant": "#3f4946",
+                      "surface-container-highest": "#e4e2e1",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#b9e7f3",
+                      "background": "#fbf9f8",
+                      "on-primary-fixed": "#00201b",
+                      "surface-tint": "#146a5c",
+                      "outline-variant": "#bec9c5",
+                      "on-tertiary": "#ffffff",
+                      "surface-bright": "#fbf9f8",
+                      "on-tertiary-fixed": "#251a00",
+                      "on-surface": "#1b1c1c",
+                      "on-secondary-fixed": "#001f25",
+                      "inverse-surface": "#303030",
+                      "surface-container": "#f0eded",
+                      "tertiary": "#765b06",
+                      "primary-fixed-dim": "#89d5c4",
+                      "outline": "#6f7976",
+                      "secondary": "#38656f",
+                      "surface-dim": "#dcd9d9",
+                      "on-secondary-container": "#3c6973",
+                      "secondary-fixed-dim": "#a0ced9",
+                      "tertiary-fixed": "#ffdf96",
+                      "inverse-on-surface": "#f3f0f0",
+                      "tertiary-fixed-dim": "#e7c269",
+                      "primary-fixed": "#a4f1df",
+                      "primary-container": "#86d2c1",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#89d5c4",
+                      "on-tertiary-fixed-variant": "#594400",
+                      "on-primary-fixed-variant": "#005045",
+                      "on-background": "#1b1c1c",
+                      "surface-variant": "#e4e2e1",
+                      "surface-container-low": "#f6f3f2",
+                      "error": "#ba1a1a",
+                      "primary": "#146a5c",
+                      "surface-container-high": "#eae8e7",
+                      "secondary-fixed": "#bceaf6",
+                      "surface": "#fbf9f8",
+                      "on-primary-container": "#005c4f",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "lg": "48px",
+                      "xs": "4px",
+                      "xl": "80px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "h2": ["Plus Jakarta Sans"],
+                      "body-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "h3": ["Plus Jakarta Sans"],
+                      "h1": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim sticky top-0 z-50 w-full shadow-sm">
+<div class="flex justify-between items-center px-gutter py-sm w-full max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<div class="flex items-center gap-4">
+<span class="font-h3 text-h3 font-bold text-primary dark:text-primary-fixed">Toy Store</span>
+</div>
+<!-- Search Bar -->
+<div class="hidden md:flex flex-1 max-w-2xl mx-12">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-[48px] bg-surface-container-low border-none rounded-xl pl-12 pr-4 focus:ring-2 focus:ring-primary text-body-md" placeholder="Cerca giocattoli, marchi o categorie..." type="text"/>
+</div>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer border border-outline-variant">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed-dim flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional close-up portrait of a friendly woman with a warm smile, set against a soft-focus studio background. The lighting is bright and airy, reflecting a modern and trustworthy persona for a community-driven marketplace. The overall aesthetic is clean and high-end, using natural skin tones and a soft blue-grey backdrop that aligns with the brand's secondary color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUh4WRKY0ktkRgDiNNywXt_LFsrshZ-2iouZdE_KFvf-cI3U4eaITAjcZUofYVvjdRRLaLzxUgJd2UvpoYP8ds2mfAYAQDlYztOOoadqONmao81eA8sPzPZZXenbmjhzttua4tWofPUbXSpzwulYqTvVbFyj6Ieyj72bo4pOu2ASptJxXw1CMVHdPHtKF82kwz4Qz_EI7eA6tZFrabNZPblQPKNepxkRwbU24jNwsmL19v4X4nPg7Tbl9ph9h5E8mS85bJb8I7b6E"/>
+</div>
+<span class="font-label-caps text-label-caps hidden lg:block">Parent Profile</span>
+</div>
+</div>
+</div>
+</header>
+<div class="max-w-container-max mx-auto flex gap-gutter px-gutter py-md">
+<!-- Sidebar Filters -->
+<aside class="hidden md:block w-72 shrink-0 space-y-md">
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm">
+<h3 class="font-h3 text-h3 text-on-surface mb-6">Filtri</h3>
+<!-- Age Group -->
+<div class="mb-8">
+<span class="font-label-caps text-label-caps text-outline mb-3 block">FASCIA D'ETÀ</span>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">0-24 Mesi</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">2-4 Anni</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">5-7 Anni</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">8+ Anni</span>
+</label>
+</div>
+</div>
+<!-- Categories -->
+<div class="mb-8">
+<span class="font-label-caps text-label-caps text-outline mb-3 block">CATEGORIA</span>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">Giocattoli in Legno</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">Educativi &amp; STEM</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">Puzzle &amp; Giochi da Tavolo</span>
+</label>
+</div>
+</div>
+<!-- Price Range -->
+<div class="mb-8">
+<span class="font-label-caps text-label-caps text-outline mb-3 block">PREZZO</span>
+<div class="flex items-center gap-2">
+<input class="w-full h-10 bg-surface border border-outline-variant rounded-lg px-3 text-body-sm" placeholder="Min" type="text"/>
+<span class="text-outline">-</span>
+<input class="w-full h-10 bg-surface border border-outline-variant rounded-lg px-3 text-body-sm" placeholder="Max" type="text"/>
+</div>
+</div>
+<!-- Distance -->
+<div class="mb-8">
+<span class="font-label-caps text-label-caps text-outline mb-3 block">DISTANZA</span>
+<select class="w-full h-10 bg-surface border border-outline-variant rounded-lg px-3 text-body-sm focus:ring-primary">
+<option>Entro 5 km</option>
+<option>Entro 10 km</option>
+<option>Entro 25 km</option>
+<option>Tutta Italia</option>
+</select>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-xl font-body-md font-bold shadow-md hover:bg-on-primary-container transition-all active:scale-95">
+                    Applica Filtri
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1">
+<!-- Welcome / Hero Promo -->
+<section class="mb-lg bg-secondary-container rounded-3xl p-lg flex flex-col md:flex-row items-center gap-md overflow-hidden relative">
+<div class="flex-1 z-10">
+<h1 class="font-h1 text-h1 text-on-secondary-container mb-4">Dai nuova vita ai giochi.</h1>
+<p class="font-body-lg text-on-secondary-container mb-6 opacity-90 max-w-lg">Vendi, acquista o scambia giocattoli in modo sostenibile nella tua community. Per un futuro più consapevole e divertente.</p>
+<div class="flex gap-4">
+<button class="px-6 py-3 bg-primary text-on-primary rounded-xl font-bold hover:shadow-lg transition-all">Inizia a Scambiare</button>
+<button class="px-6 py-3 bg-surface text-primary rounded-xl font-bold border border-primary-container hover:bg-surface-container-low transition-all">Scopri di più</button>
+</div>
+</div>
+<div class="w-full md:w-1/3 relative h-48 md:h-64">
+<img class="absolute inset-0 w-full h-full object-contain drop-shadow-2xl" data-alt="A beautiful collection of classic wooden toys, including a rainbow stacker, a small train, and wooden blocks, arranged neatly on a light wood floor. The scene is bathed in warm, natural sunlight coming through a nearby window, creating a cozy and joyful atmosphere. The soft shadows and high-key lighting emphasize the sustainable and premium feel of the community toy exchange." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAAPUPeHbnE2ek1_JtEE9-M1zyu4qjeJjNbQ__T5ajtK5n2Y0MOJTWRrC_pufOueSuH5EDYSDnVm0eN3gXVBN7iUjP6MWAnT4yciE7_rRr94sMqVuxf0Ydpx7L6s5uVUp5xt7-uQI3-s-j1ZJTeih6ibeay6HH9LCfcKW_oT-N5dQVEFw4bAXJxh1vEi5fKTHe3jQL3_gBitPyxzsxPJArrzU4zSMFVbdnq9H0IGmqDUecUfvHpj8-zZSUdLQ44TCM9ifYgI3l-OM"/>
+</div>
+</section>
+<!-- Toy Grid -->
+<div class="flex justify-between items-end mb-md">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface">Annunci Recenti</h2>
+<p class="font-body-md text-on-surface-variant">Scopri i giocattoli aggiunti oggi vicino a te.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-variant transition-all">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+                        RILEVANZA
+                    </button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-surface rounded-2xl shadow-sm border border-transparent hover:border-primary-fixed-dim hover:shadow-md transition-all group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden rounded-t-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A vibrant set of high-quality plastic building blocks in primary colors, organized neatly into a creative structure. The lighting is crisp and bright, highlighting the clean textures and durable quality of the pieces. The background is a minimalist, light-toned playroom environment, conveying a sense of organized joy and educational play." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZjDv_05nCABWEawBU8YqhvoktIKu-Tjw4b7MQqOypWwakIf3KgKkVdqsyPheiYsnwUsa_CsHztbOlwXP2Eelw3KJf-pG-qmaX2txS14NgYyN7ij4YVWB8Z3nnglJlq1qm52ZP5DCl07T5CKPoN3LH2jG7ZzV612LHh8PMLf0W4LjRasWspUZyNELvTXj_fP-UYHgEjAS34cRYrxCw88lFl1cyi0YR1QaeoZDBVcT90xG8t5oPfqBj22upYiWWFnoW9akiKMUPqHc"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container font-label-caps text-[10px] rounded-full shadow-sm">SCAMBIO</span>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant font-label-caps text-[10px] rounded-full shadow-sm">OTTIMO STATO</span>
+</div>
+<button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-error opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<h4 class="font-h3 text-body-lg text-on-surface mb-1 truncate">Set Costruzioni STEM 150pz</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-body-sm">Milano (MI) • 2km</span>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-h2 text-h3 text-primary">SCAMBIO</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full">2-4 ANNI</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface rounded-2xl shadow-sm border border-transparent hover:border-primary-fixed-dim hover:shadow-md transition-all group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden rounded-t-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A classic wooden rocking horse with a handcrafted feel, featuring smooth polished wood and simple red accents. The setting is a minimalist, contemporary nursery with soft ambient lighting and a neutral color palette. The image evokes a sense of nostalgia, quality, and timeless craftsmanship, perfect for a high-end sustainable toy marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDs2Ld53jynHmvo_cDX-aLcgtgwMxqnb8xLhynWH_eTijepxkOLNx2EDju18RnO8r4cvw-TZrVNY1NEfe5_TFFon_1EX2meLk7nsP1P1OqUai1OoZ6j1UyaGgOtLocwMs9R4vedxatg1b3d19_Q4z37v-Sg256n-ovZPgIynt5OHpU-cqkcyJLTkROyp1hOpCyVCEQvy0g9I71ZdWxbGleExGLVOt2iCu6LM6Lt7UqjBtH_d4mbMLDCtB_w9Hqs-fBwU9_hckZkzY"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant font-label-caps text-[10px] rounded-full shadow-sm">PARI AL NUOVO</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-h3 text-body-lg text-on-surface mb-1 truncate">Cavallino in Legno Vintage</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-body-sm">Torino (TO) • 5km</span>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-h2 text-h3 text-on-surface">€45,00</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full">3-6 ANNI</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface rounded-2xl shadow-sm border border-transparent hover:border-primary-fixed-dim hover:shadow-md transition-all group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden rounded-t-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A detailed, colorful wooden puzzle map of Europe, where each country is a separate, precisely cut piece. The puzzle is laid out on a white table, with bright overhead lighting that emphasizes the vibrant colors and educational purpose. The composition is clean and focused, highlighting the high condition of the used item." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR7-UBG2AVkEfAt4vLJ9Cezv1MYUScP6I_U8BmmE8iWOzzTQqYPn0LkBPXfa71pst3InBJCVHaz-K-SzthwoYvYHaSJzoENTX_tPfVJsgOcGu_6Y-cMjwQyzE6XnWOMnn2bYurXF4DP_J815gU3vdgYDxykK8quqHXSWD4pzb89hyUi43AAXlQfZna3cOHL4nrqQxmlddthe-wMmz8GyOea8VUGFKEyL4mvhvDxXbhG6wLoGqqu9VQa_FzxDOl752JUOS_87HsyWI"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant font-label-caps text-[10px] rounded-full shadow-sm">USATO BUONO</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-h3 text-body-lg text-on-surface mb-1 truncate">Puzzle Mappa Europa 3D</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-body-sm">Bologna (BO) • 12km</span>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-h2 text-h3 text-on-surface">€12,00</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full">5-8 ANNI</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface rounded-2xl shadow-sm border border-transparent hover:border-primary-fixed-dim hover:shadow-md transition-all group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden rounded-t-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A sleek, modern toy electric car for children in a bold metallic finish. The vehicle is positioned in a bright, spacious driveway with high-key lighting that makes the surfaces gleam. The visual style is premium and high-end, suggesting a high-value item for sale. The scene feels professional and clean, fitting for a curated second-hand shop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx0P7B8NnXLZHWeGNOSqjK2sreZ8p7Ct5Iz76mWJiRdLiA3W1UXAp4ADz4ePe_spEQ5-d468h6evR_Xp-VBZlpEb3igAnetvUaDqHjWRlXMf5WbPjypxBGCst83ET1c3dgSywJEVfTZixnN5G_6Oa-FdSZLfDR91AIPIBKMzix0xxZi1m_U8loxDDucvs1hmfMdJYfhMYMg4_esE7UB3xJYUZ86Y0Wp_6D0hTMlkBPpah9DNQLpkt4lqKKorjRv1ZCngSPjivlxdw"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant font-label-caps text-[10px] rounded-full shadow-sm">QUASI NUOVO</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-h3 text-body-lg text-on-surface mb-1 truncate">Auto Elettrica Radiocomandata</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-body-sm">Roma (RM) • 15km</span>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-h2 text-h3 text-on-surface">€180,00</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full">3-5 ANNI</span>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-surface rounded-2xl shadow-sm border border-transparent hover:border-primary-fixed-dim hover:shadow-md transition-all group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden rounded-t-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A macro shot of vibrant, high-quality board game pieces and colorful pawns scattered across a beautifully designed game board. The lighting is warm and directional, casting soft shadows that give the scene a tactile, three-dimensional feel. The focus is sharp on the foreground elements, creating a professional and inviting image for a toy marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfspBni0vwRM1G7CqX_xKE722CwtdVGsAZxHPVmxK1jRNHseTaqw9Yf0y1I4PQxJkbLNACP-sZADsRUuJUv-hp79guD-k-42L8b2uwBvd2k4Lvl2GlDz8rhk_4J5PR5ZDlkxlWkKsQucAVekfGSe4Qfehfl9VnVMzpAbWYWsIcM45sgBmsEDt5Y5apWdSWnsfddmxihZu5YBcExmDapon35YIxmOpdDcEA9ReT1Cx2OmwPc81kqTEBb37yuGsug4_TQ7XQf1QnIsQ"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container font-label-caps text-[10px] rounded-full shadow-sm">SCAMBIO</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-h3 text-body-lg text-on-surface mb-1 truncate">Gioco di Società "Mondo Bio"</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-body-sm">Firenze (FI) • 8km</span>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-h2 text-h3 text-primary">SCAMBIO</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full">8+ ANNI</span>
+</div>
+</div>
+</div>
+<!-- Add more cards as needed -->
+<!-- Card Placeholder 6-10 for the "4-5 per riga" requirement -->
+<div class="hidden xl:block bg-surface rounded-2xl shadow-sm border border-transparent hover:border-primary-fixed-dim hover:shadow-md transition-all group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden rounded-t-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A high-quality educational robot toy designed for young children, featuring friendly digital eyes and colorful plastic accents. The robot is sitting on a clean white desk, illuminated by soft studio lighting that emphasizes its modern design and interactive features. The scene is bright and professional, suggesting a tech-forward yet safe toy choice." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEzmx3UDU5F3Qm0-Q_2X8Oc4626FI4hKJBXlvqD44Bwgj63_wKfv8EoozaH3YYtTBWQNgLYKNkiePUB76YMJLpbO5p-gjLjChymjMs6hvR8cDcZKqUqwCF1PbRRmGvvowiyhpRrsNQnfFOUNE-mg6HVDXVbWBLuEZRmsegWZz7rSkVDXs01-c6jJoRLRawYfx89LaTbUmuRGFvL3fCRWmvEoUjQI9rdfAHXLVpK-4ryN_3xCBQcXvGKURSMBi1iLGG8h9rs4wYQKo"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant font-label-caps text-[10px] rounded-full shadow-sm">COME NUOVO</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-h3 text-body-lg text-on-surface mb-1 truncate">Robot Educativo Coding</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-body-sm">Napoli (NA) • 4km</span>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-h2 text-h3 text-on-surface">€35,00</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full">5-7 ANNI</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Loading More -->
+<div class="mt-lg flex justify-center">
+<button class="px-8 py-3 bg-surface-container text-primary font-bold rounded-xl hover:bg-surface-container-high transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">refresh</span>
+                    Carica altri annunci
+                </button>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container-lowest dark:bg-surface-container-high fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-base pt-2 rounded-t-xl shadow-md">
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 transition-transform duration-150 ease-out active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined" data-weight="fill">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant px-4 py-2 hover:bg-secondary-container dark:hover:bg-on-secondary-fixed-variant transition-all cursor-pointer">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-caps text-label-caps">Messages</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant px-4 py-2 hover:bg-secondary-container dark:hover:bg-on-secondary-fixed-variant transition-all cursor-pointer">
+<span class="material-symbols-outlined">swap_horizontal_circle</span>
+<span class="font-label-caps text-label-caps">Swaps</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant px-4 py-2 hover:bg-secondary-container dark:hover:bg-on-secondary-fixed-variant transition-all cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps">Profile</span>
+</div>
+</nav>
+<!-- FAB for adding listing -->
+<button class="fixed bottom-gutter right-gutter w-16 h-16 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center hover:scale-105 active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+</body></html>
