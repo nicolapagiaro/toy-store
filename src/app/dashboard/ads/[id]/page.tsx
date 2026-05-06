@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { MEDIA_BUCKET } from "@/lib/media/storage";
 import { prisma } from "@/lib/prisma";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/user";
@@ -36,7 +37,7 @@ export default async function ToyAdDetailPage({ params }: { params: Promise<{ id
   const supabase = await createClient();
   const images = ad.imagePaths.map((path) => ({
     path,
-    url: supabase.storage.from("toy-ads").getPublicUrl(path).data.publicUrl,
+    url: supabase.storage.from(MEDIA_BUCKET).getPublicUrl(path).data.publicUrl,
   }));
 
   return (

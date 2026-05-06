@@ -17,3 +17,4 @@ prisma/migrations
 .github/
 .gemini/
 test-results/
+playwright/.auth/
