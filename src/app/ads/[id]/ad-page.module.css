@@ -1,0 +1,430 @@
+/* Design tokens */
+:root {
+  --emerald: #059669;
+  --emerald-light: #d1fae5;
+  --emerald-hover: #047857;
+  --border: rgba(45, 55, 72, 0.12);
+  --border-emerald: rgba(5, 150, 105, 0.28);
+  --muted-text: #667085;
+  --text: #2d3748;
+  --surface: #ffffff;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+  --shadow-card: 0 10px 24px rgba(45, 55, 72, 0.08);
+  --shadow-emerald: 0 8px 24px rgba(5, 150, 105, 0.2);
+  --shadow-soft: 0 16px 40px rgba(255, 154, 162, 0.16);
+}
+
+.pageShell {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+/* Nav */
+.topNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.brand {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.3px;
+  background: linear-gradient(120deg, #ff9aa2, #c7ceea, #b5ead7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ghostLink {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.75);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.ghostLink:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(45, 55, 72, 0.22);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.breadcrumb a {
+  color: var(--muted-text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.breadcrumb a:hover {
+  color: var(--text);
+}
+
+.breadcrumbSep {
+  opacity: 0.45;
+}
+
+/* Grid */
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+}
+
+@media (max-width: 980px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Panel */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* Gallery */
+.galleryPanel {
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.adImageArea {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background:
+    linear-gradient(140deg, rgba(255, 154, 162, 0.35), rgba(255, 217, 168, 0.35)),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.12) 0 14px, rgba(255,255,255,0.25) 14px 28px);
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.adMainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagePlaceholderIcon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.35;
+}
+
+.adImageThumbRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.adImageThumb {
+  width: 72px;
+  height: 56px;
+  border-radius: var(--radius-xs);
+  border: 2px solid transparent;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.adImageThumb.active {
+  border-color: var(--emerald);
+}
+
+/* Ad info */
+.adInfoPanel {
+  padding: 28px;
+}
+
+.badgeRow {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.badge {
+  font-size: 0.74rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.badgeSecondary {
+  background: rgba(181, 234, 215, 0.35);
+}
+
+.badgeAccent {
+  background: rgba(255, 217, 168, 0.42);
+}
+
+.badgeEmerald {
+  background: var(--emerald-light);
+  color: var(--emerald);
+}
+
+.adTitle {
+  font-size: 1.7rem;
+  margin: 0 0 10px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.adMetaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.88rem;
+  color: var(--muted-text);
+  font-weight: 600;
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+}
+
+.adDescription {
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0 0 22px;
+  font-size: 0.97rem;
+}
+
+/* CTA box (authenticated non-owner) */
+.ctaBox {
+  border: 1px solid var(--border-emerald);
+  border-radius: var(--radius-md);
+  background: linear-gradient(150deg, rgba(5, 150, 105, 0.06), rgba(110, 231, 183, 0.08));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ctaBoxTitle {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.ctaBoxHint {
+  margin: 0;
+  font-size: 0.87rem;
+  color: var(--muted-text);
+}
+
+/* Auth prompt box (unauthenticated) */
+.authPromptBox {
+  border: 1px solid rgba(255, 154, 162, 0.45);
+  border-radius: var(--radius-md);
+  background: linear-gradient(150deg, rgba(255, 154, 162, 0.1), rgba(255, 217, 168, 0.1));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.authPromptTitle {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.authPromptText {
+  margin: 0;
+  font-size: 0.87rem;
+  color: var(--muted-text);
+  line-height: 1.5;
+}
+
+.authBtnRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Owner box */
+.ownerBox {
+  border: 1px solid rgba(79, 209, 197, 0.4);
+  border-radius: var(--radius-md);
+  background: rgba(79, 209, 197, 0.08);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ownerBoxText {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.15s, transform 0.1s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btnEmerald {
+  background: linear-gradient(120deg, var(--emerald), var(--emerald-hover));
+  color: #fff;
+  box-shadow: var(--shadow-emerald);
+  font-size: 1rem;
+  padding: 13px 26px;
+}
+
+.btnOutline {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+}
+
+.btnSignin {
+  background: linear-gradient(120deg, #ff9aa2, #ffaeb5);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+  font-size: 1rem;
+  padding: 13px 26px;
+}
+
+.errorText {
+  color: #b91c1c;
+  font-size: 0.87rem;
+  margin: 0;
+}
+
+/* Sidebar */
+.sellerCard {
+  padding: 18px;
+  margin-bottom: 12px;
+}
+
+.sideCard {
+  padding: 18px;
+  margin-bottom: 12px;
+}
+
+.sideTitle {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.sellerHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.avatarPink {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #ff9aa2, #c7ceea);
+  color: #fff;
+}
+
+.sellerName {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.infoBox {
+  border: 1px solid rgba(79, 209, 197, 0.4);
+  background: rgba(79, 209, 197, 0.1);
+  color: #154946;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+}
+
+.warningBox {
+  border: 1px solid rgba(252, 129, 129, 0.45);
+  background: rgba(252, 129, 129, 0.1);
+  color: #7f1d1d;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+}
+
+.hintList {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted-text);
+  display: grid;
+  gap: 5px;
+  font-size: 0.9rem;
+}
