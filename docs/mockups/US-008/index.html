@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-008 — Avviare chat contestuale da un annuncio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      .screen-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .screen-card {
+        display: block;
+        text-decoration: none;
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        background: var(--surface);
+        box-shadow: var(--shadow-card);
+        overflow: hidden;
+        transition: transform 0.15s, box-shadow 0.15s;
+      }
+
+      .screen-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 36px rgba(45, 55, 72, 0.13);
+      }
+
+      .screen-thumb {
+        height: 148px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.8rem;
+      }
+
+      .screen-thumb-ad-auth {
+        background: linear-gradient(140deg, rgba(5, 150, 105, 0.12), rgba(110, 231, 183, 0.16));
+      }
+
+      .screen-thumb-ad-guest {
+        background: linear-gradient(140deg, rgba(255, 154, 162, 0.18), rgba(255, 217, 168, 0.2));
+      }
+
+      .screen-thumb-chat {
+        background: linear-gradient(140deg, rgba(181, 234, 215, 0.25), rgba(199, 206, 234, 0.25));
+      }
+
+      .screen-body {
+        padding: 16px 18px 18px;
+      }
+
+      .screen-label {
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--muted-text);
+        margin-bottom: 4px;
+      }
+
+      .screen-name {
+        font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 6px;
+      }
+
+      .screen-desc {
+        font-size: 0.87rem;
+        color: var(--muted-text);
+        line-height: 1.45;
+        margin: 0 0 12px;
+      }
+
+      .ac-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 5px;
+      }
+
+      .ac-list li {
+        font-size: 0.8rem;
+        color: var(--muted-text);
+        display: flex;
+        gap: 6px;
+      }
+
+      .ac-list li::before {
+        content: "✓";
+        font-weight: 800;
+        color: var(--emerald);
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+
+      <!-- Navigation -->
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <span style="font-size:0.85rem; color:var(--muted-text); font-weight:700; border:1px solid var(--border); border-radius:999px; padding:8px 14px; background:rgba(255,255,255,0.7);">
+          US-008 · EP-003 Scambio, Chat e Fiducia
+        </span>
+      </header>
+
+      <!-- Story header -->
+      <section class="panel hero-panel">
+        <h2 class="hero-title">Avviare chat contestuale da un annuncio</h2>
+        <p class="hero-subtitle">
+          Come genitore interessato a un annuncio, voglio avviare una chat legata direttamente all'annuncio selezionato,
+          così da poter discutere i dettagli senza ambiguità su quale giocattolo si stia parlando.
+        </p>
+        <div class="chip-row">
+          <span class="chip chip-emerald">Priorità HIGH · 5 story points</span>
+          <span class="chip chip-info">3 schermate · 3 stati utente</span>
+          <span class="chip chip-owner">EP-003 — Scambio, Chat e Fiducia</span>
+        </div>
+      </section>
+
+      <!-- Acceptance criteria -->
+      <section class="panel" style="padding: 22px 26px; margin-bottom: 20px;">
+        <h3 class="section-title" style="margin-bottom: 14px;">Criteri di accettazione</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+          <div style="background: rgba(5,150,105,0.07); border:1px solid rgba(5,150,105,0.2); border-radius:var(--radius-md); padding:14px 16px;">
+            <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.4px; color:var(--emerald); margin-bottom:6px;">AC-1 · Avvia chat</div>
+            <p style="margin:0; font-size:0.88rem; color:var(--muted-text); line-height:1.45;">
+              Dal dettaglio annuncio, l'utente autenticato non proprietario può avviare una chat con il proprietario tramite CTA prominente.
+            </p>
+          </div>
+          <div style="background: rgba(5,150,105,0.07); border:1px solid rgba(5,150,105,0.2); border-radius:var(--radius-md); padding:14px 16px;">
+            <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.4px; color:var(--emerald); margin-bottom:6px;">AC-2 · Riferimento annuncio</div>
+            <p style="margin:0; font-size:0.88rem; color:var(--muted-text); line-height:1.45;">
+              Ogni chat mostra una reference card con titolo, miniatura, città e condizione dell'annuncio associato, sempre visibile in cima.
+            </p>
+          </div>
+          <div style="background: rgba(252,129,129,0.08); border:1px solid rgba(252,129,129,0.3); border-radius:var(--radius-md); padding:14px 16px;">
+            <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.4px; color:#b42318; margin-bottom:6px;">AC-3 · Guest bloccato</div>
+            <p style="margin:0; font-size:0.88rem; color:var(--muted-text); line-height:1.45;">
+              Un utente non autenticato vede un prompt di accesso al posto del pulsante di chat. Nessuna chat può essere avviata senza autenticazione.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen cards -->
+      <h3 class="section-title">Schermate mockup</h3>
+      <div class="screen-grid">
+
+        <!-- Screen 1: authenticated non-owner -->
+        <a href="./annuncio-pubblico.html" class="screen-card">
+          <div class="screen-thumb screen-thumb-ad-auth">💬</div>
+          <div class="screen-body">
+            <div class="screen-label">Schermata 1 · /ads/[id]</div>
+            <h3 class="screen-name">Annuncio pubblico — Autenticato</h3>
+            <p class="screen-desc">
+              Vista del dettaglio annuncio per un utente loggato che non è il proprietario. CTA "Avvia Chat" in evidenza.
+            </p>
+            <ul class="ac-list">
+              <li>Galleria immagini con miniature</li>
+              <li>Titolo, badge condizione ed età</li>
+              <li>Meta: città, data, codice</li>
+              <li>CTA emerald "Avvia chat con Giulia"</li>
+              <li>Card venditore con info accesso</li>
+            </ul>
+          </div>
+        </a>
+
+        <!-- Screen 2: unauthenticated user -->
+        <a href="./annuncio-non-autenticato.html" class="screen-card">
+          <div class="screen-thumb screen-thumb-ad-guest">🔒</div>
+          <div class="screen-body">
+            <div class="screen-label">Schermata 2 · /ads/[id] (guest)</div>
+            <h3 class="screen-name">Annuncio pubblico — Non autenticato</h3>
+            <p class="screen-desc">
+              Stessa pagina dell'annuncio, ma al posto del bottone chat compare un blocco di invito all'accesso.
+            </p>
+            <ul class="ac-list">
+              <li>Contenuto annuncio identico</li>
+              <li>Auth prompt box al posto della CTA chat</li>
+              <li>Bottoni "Accedi per contattare" e "Registrati gratis"</li>
+              <li>Card venditore con warning accesso richiesto</li>
+              <li>Sidebar "Perché registrarsi?"</li>
+            </ul>
+          </div>
+        </a>
+
+        <!-- Screen 3: chat page -->
+        <a href="./chat.html" class="screen-card">
+          <div class="screen-thumb screen-thumb-chat">🗨️</div>
+          <div class="screen-body">
+            <div class="screen-label">Schermata 3 · /dashboard/chats/[id]</div>
+            <h3 class="screen-name">Pagina chat con riferimento annuncio</h3>
+            <p class="screen-desc">
+              Chat a due colonne: pannello messaggi con reference card in cima e sidebar con riepilogo annuncio.
+            </p>
+            <ul class="ac-list">
+              <li>Ad reference card (thumbnail, titolo, badge, città)</li>
+              <li>Lista messaggi con avatar, nome, timestamp</li>
+              <li>Bubble distinte per "mio" e "altro"</li>
+              <li>Input messaggio + bottone invia emerald</li>
+              <li>Sidebar: annuncio collegato + sicurezza</li>
+            </ul>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </body>
+</html>

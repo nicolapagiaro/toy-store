@@ -194,6 +194,7 @@ After implementing this story, the user can: controllare la distanza operativa d
 #### US-008: Avviare chat contestuale da un annuncio
 
 **Epic:** EP-003 | **Priority:** HIGH | **Story Points:** 5
+**Status:** IN PROGRESS
 
 **Story**
 As genitore interessato a un annuncio,

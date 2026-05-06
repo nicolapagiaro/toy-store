@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-008 — Annuncio pubblico (utente non autenticato)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+
+      <!-- Navigation -->
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <nav class="nav-links">
+          <a class="ghost-link" href="./index.html">Tutti i mockup</a>
+          <a class="ghost-link" href="/auth/signin">Accedi</a>
+        </nav>
+      </header>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="#">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="#">Annunci</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Triciclo evolutivo 3 in 1</span>
+      </nav>
+
+      <div class="layout-grid">
+        <!-- Main column -->
+        <main>
+
+          <!-- Image gallery -->
+          <section class="panel" style="padding: 20px; margin-bottom: 16px;">
+            <div class="ad-image-area">
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0.35;">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                  <rect x="3" y="3" width="18" height="18" rx="3"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+            </div>
+            <div class="ad-image-thumb-row">
+              <div class="ad-image-thumb active"></div>
+              <div class="ad-image-thumb"></div>
+              <div class="ad-image-thumb"></div>
+            </div>
+          </section>
+
+          <!-- Ad info -->
+          <section class="panel ad-info-panel">
+
+            <div class="badge-row" style="margin-bottom: 12px;">
+              <span class="badge badge-secondary">3–5 anni</span>
+              <span class="badge badge-accent">Ottime condizioni</span>
+              <span class="badge badge-emerald">Disponibile</span>
+            </div>
+
+            <h2 class="ad-title">Triciclo evolutivo 3 in 1 con cestino e cappottina</h2>
+
+            <div class="ad-meta-row">
+              <span class="meta-item">
+                <span class="meta-icon">📍</span>
+                Milano, Niguarda
+              </span>
+              <span class="divider"></span>
+              <span class="meta-item">
+                <span class="meta-icon">🗓</span>
+                Pubblicato il 28 apr 2026
+              </span>
+              <span class="divider"></span>
+              <span class="meta-item">
+                <span class="meta-icon">🔖</span>
+                #TS-2026-0017
+              </span>
+            </div>
+
+            <p class="ad-description">
+              Triciclo evolutivo in ottime condizioni, usato per una sola estate. Include cestino posteriore, cappottina parasole apribile e campanello. Il manubrio si regola in altezza e la seduta ha la spalliera reclinabile. Ideale per bambini dai 18 mesi fino ai 4-5 anni.
+              Pronto per il ritiro in zona Niguarda; non spedisco.
+            </p>
+
+            <!-- Auth prompt box — utente non autenticato -->
+            <div class="auth-prompt-box">
+              <h3 class="auth-prompt-title">Vuoi contattare il venditore?</h3>
+              <p class="auth-prompt-text">
+                Accedi al tuo account per avviare una chat con Giulia R. La registrazione è gratuita e richiede pochi secondi.
+              </p>
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <a href="/auth/signin" class="btn btn-signin">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex-shrink:0">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                    <polyline points="10 17 15 12 10 7"/>
+                    <line x1="15" y1="12" x2="3" y2="12"/>
+                  </svg>
+                  Accedi per contattare
+                </a>
+                <a href="/auth/signin?tab=register" class="btn btn-outline">
+                  Registrati gratis
+                </a>
+              </div>
+            </div>
+
+          </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+
+          <!-- Seller card (limited info for guests) -->
+          <section class="panel seller-card" style="margin-bottom: 12px;">
+            <h3 class="side-title">Venditore</h3>
+            <div class="seller-header">
+              <div class="avatar avatar-pink">G</div>
+              <div>
+                <div class="seller-name">Giulia Rossetti</div>
+                <div class="seller-meta">Membro da marzo 2025 · 4 annunci</div>
+              </div>
+            </div>
+            <div class="warning-box" style="margin-top: 4px;">
+              <strong>Accesso richiesto</strong> — Effettua l'accesso per vedere il contatto e avviare una conversazione.
+            </div>
+          </section>
+
+          <!-- Details card -->
+          <section class="panel side-card">
+            <h3 class="side-title">Dettagli annuncio</h3>
+            <ul class="hint-list">
+              <li>Categoria: Tricicli e biciclette</li>
+              <li>Fascia d'età: 3–5 anni</li>
+              <li>Condizione: Ottime condizioni</li>
+              <li>Città: Milano (Niguarda)</li>
+              <li>Codice: #TS-2026-0017</li>
+            </ul>
+          </section>
+
+          <!-- Why sign up -->
+          <section class="panel side-card">
+            <h3 class="side-title">Perché registrarsi?</h3>
+            <ul class="hint-list">
+              <li>Chat diretta con i venditori</li>
+              <li>Tracciabilità degli scambi</li>
+              <li>Pubblica i tuoi annunci gratuitamente</li>
+              <li>Comunità di genitori di fiducia</li>
+            </ul>
+          </section>
+
+        </aside>
+      </div>
+
+    </div>
+  </body>
+</html>
