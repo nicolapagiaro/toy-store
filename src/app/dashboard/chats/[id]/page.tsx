@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { MEDIA_BUCKET } from "@/lib/media/storage";
+import { getToyAdSignedImages } from "@/lib/media/toy-ad-images";
 import { prisma } from "@/lib/prisma";
-import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/user";
 import { SendMessageForm } from "./send-message-form";
 import styles from "./chat-page.module.css";
@@ -46,11 +45,8 @@ export default async function ChatPage({ params }: { params: Promise<{ id: strin
   const isParticipant = conversation.buyerId === user.id || conversation.ownerId === user.id;
   if (!isParticipant) notFound();
 
-  const supabase = await createClient();
-  const firstImageUrl =
-    conversation.toyAd.imagePaths[0]
-      ? supabase.storage.from(MEDIA_BUCKET).getPublicUrl(conversation.toyAd.imagePaths[0]).data.publicUrl
-      : null;
+  const adImages = await getToyAdSignedImages(conversation.toyAd.imagePaths);
+  const firstImageUrl = adImages[0]?.url ?? null;
 
   const adLocation = conversation.toyAd.district
     ? `${conversation.toyAd.city}, ${conversation.toyAd.district}`

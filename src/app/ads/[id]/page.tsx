@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MEDIA_BUCKET } from "@/lib/media/storage";
+import { getToyAdSignedImages } from "@/lib/media/toy-ad-images";
 import { prisma } from "@/lib/prisma";
-import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/user";
 import { StartChatForm } from "./start-chat-form";
 import styles from "./ad-page.module.css";
@@ -33,11 +32,7 @@ export default async function PublicAdPage({ params }: { params: Promise<{ id: s
 
   if (!ad) notFound();
 
-  const supabase = await createClient();
-  const images = ad.imagePaths.map((path) => ({
-    path,
-    url: supabase.storage.from(MEDIA_BUCKET).getPublicUrl(path).data.publicUrl,
-  }));
+  const images = await getToyAdSignedImages(ad.imagePaths);
 
   const location = ad.district ? `${ad.city}, ${ad.district}` : ad.city;
   const createdDate = new Intl.DateTimeFormat("it-IT", { dateStyle: "long" }).format(ad.createdAt);
