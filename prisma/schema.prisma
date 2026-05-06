@@ -15,6 +15,44 @@ model User {
   image      String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+  toyAds     ToyAd[]
 
   @@map("users")
+}
+
+enum ToyAdAgeRange {
+  AGE_0_2
+  AGE_3_5
+  AGE_6_8
+  AGE_9_12
+}
+
+enum ToyAdCondition {
+  LIKE_NEW
+  EXCELLENT
+  GOOD
+}
+
+enum ToyAdStatus {
+  PUBLISHED
+}
+
+model ToyAd {
+  id          String         @id @default(uuid())
+  ownerId     String
+  title       String
+  description String
+  ageRange    ToyAdAgeRange
+  condition   ToyAdCondition
+  city        String
+  district    String?
+  imagePaths  String[]
+  status      ToyAdStatus    @default(PUBLISHED)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+
+  @@index([ownerId])
+  @@map("toy_ads")
 }

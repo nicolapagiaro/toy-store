@@ -37,6 +37,12 @@ export default async function Dashboard() {
           </p>
           <div className="flex gap-4">
             <Link
+              href="/dashboard/ads/new"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
+            >
+              Nuovo annuncio
+            </Link>
+            <Link
               href="/"
               className="border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex h-10 items-center justify-center rounded-md border px-4 py-2 text-sm font-medium"
             >

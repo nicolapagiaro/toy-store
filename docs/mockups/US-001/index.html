@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-001 - Nuovo annuncio (form vuoto)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <a class="ghost-link" href="./annuncio-pubblicato.html">Vedi esempio annuncio pubblicato</a>
+      </header>
+
+      <div class="layout-grid">
+        <main>
+          <section class="panel hero-panel">
+            <h2 class="hero-title">Nuovo annuncio</h2>
+            <p class="hero-subtitle">
+              Compila i dati del giocattolo per pubblicare un'offerta chiara e affidabile. Tutti i campi con asterisco sono obbligatori.
+            </p>
+            <div class="chip-row">
+              <span class="chip chip-mandatory">6 campi obbligatori + almeno 1 foto</span>
+              <span class="chip chip-helper">Feedback immediato durante la compilazione</span>
+            </div>
+          </section>
+
+          <section class="panel form-panel">
+            <h3 class="section-title">Dati annuncio</h3>
+
+            <div class="form-section">
+              <h4 class="section-heading">Dati base</h4>
+              <div class="form-grid">
+                <div class="field field-full">
+                  <label for="titolo">Titolo <span class="required">*</span></label>
+                  <input id="titolo" placeholder="Es. Triciclo evolutivo 3 in 1" />
+                </div>
+                <div class="field field-full">
+                  <label for="descrizione">Descrizione <span class="required">*</span></label>
+                  <textarea id="descrizione" placeholder="Descrivi stato, accessori inclusi, utilizzo e dettagli utili per i genitori"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4 class="section-heading">Classificazione</h4>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="fasciaEta">Fascia d'eta <span class="required">*</span></label>
+                  <select id="fasciaEta">
+                    <option selected disabled>Seleziona fascia</option>
+                    <option>0-2 anni</option>
+                    <option>3-5 anni</option>
+                    <option>6-8 anni</option>
+                    <option>9-12 anni</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="condizione">Condizione <span class="required">*</span></label>
+                  <select id="condizione">
+                    <option selected disabled>Seleziona condizione</option>
+                    <option>Come nuovo</option>
+                    <option>Ottime condizioni</option>
+                    <option>Buone condizioni</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4 class="section-heading">Localita</h4>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="citta">Citta <span class="required">*</span></label>
+                  <input id="citta" placeholder="Es. Milano" />
+                </div>
+                <div class="field">
+                  <label for="quartiere">Quartiere / zona</label>
+                  <input id="quartiere" placeholder="Es. Citta Studi" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4 class="section-heading">Foto del giocattolo</h4>
+              <div class="photo-dropzone">
+                <strong>Carica almeno una foto <span class="required">*</span></strong>
+                <p class="hero-subtitle" style="margin: 7px 0 0;">
+                  Mostra frontalmente il giocattolo e almeno un dettaglio. Formati: JPG, PNG.
+                </p>
+                <div class="photo-grid">
+                  <div class="photo-slot">Foto principale</div>
+                  <div class="photo-slot">Foto dettaglio</div>
+                  <div class="photo-slot">+ Aggiungi</div>
+                  <div class="photo-slot">+ Aggiungi</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-row">
+              <button class="btn btn-outline">Salva bozza</button>
+              <a class="btn btn-primary" href="./form-errori.html" style="text-decoration: none;">Pubblica annuncio</a>
+            </div>
+          </section>
+        </main>
+
+        <aside>
+          <section class="panel side-card">
+            <h3 class="side-title">Checklist rapida</h3>
+            <ul class="hint-list">
+              <li>Titolo breve e specifico</li>
+              <li>Descrizione con stato reale</li>
+              <li>Fascia eta coerente con prodotto</li>
+              <li>Localita chiara per il ritiro</li>
+            </ul>
+          </section>
+
+          <section class="panel side-card">
+            <h3 class="side-title">Anteprima card annuncio</h3>
+            <article class="preview-tile">
+              <div class="preview-media"></div>
+              <div class="preview-body">
+                <div class="preview-badges">
+                  <span class="badge badge-secondary">3-5 anni</span>
+                  <span class="badge badge-accent">Come nuovo</span>
+                </div>
+                <strong>Titolo annuncio</strong>
+                <p style="margin: 8px 0 0; color: var(--muted-text); font-size: 0.9rem;">
+                  Localita e dettagli appariranno qui dopo la compilazione.
+                </p>
+              </div>
+            </article>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>

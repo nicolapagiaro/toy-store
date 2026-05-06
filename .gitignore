@@ -16,3 +16,5 @@ prisma/migrations
 .opencode/
 .github/
 .gemini/
+test-results/
+playwright/.auth/
