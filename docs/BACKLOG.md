@@ -64,6 +64,7 @@ After implementing this story, the user can: pubblicare un nuovo annuncio valido
 #### US-002: Modificare i dettagli di un annuncio attivo
 
 **Epic:** EP-001 | **Priority:** HIGH | **Story Points:** 3
+**Status:** PLANNED
 
 **Story**
 As genitore registrato,

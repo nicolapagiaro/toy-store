@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-002 - Accesso negato modifica annuncio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <a class="ghost-link" href="./index.html">Vai al tuo annuncio</a>
+      </header>
+
+      <main>
+        <section class="panel hero-panel">
+          <h2 class="hero-title">Modifica non consentita</h2>
+          <p class="hero-subtitle">
+            Hai aperto l'URL di modifica dell'annuncio #TS-2026-0049, ma questo annuncio appartiene a un altro utente.
+            Per sicurezza, i controlli ownership vengono eseguiti prima di caricare il form editabile.
+          </p>
+          <div class="chip-row">
+            <span class="chip chip-warning">Owner mismatch rilevato lato server</span>
+            <span class="chip chip-validation">Nessun campo modificabile mostrato</span>
+          </div>
+        </section>
+
+        <section class="panel form-panel">
+          <h3 class="section-title">Dettaglio protezione</h3>
+          <div class="ownership-lock">
+            <strong>Accesso negato (403)</strong>
+            <p style="margin: 8px 0 0; color: var(--muted-text);">
+              Solo il proprietario dell'annuncio puo vedere il form completo e salvare modifiche a testo o foto.
+              Se pensi sia un errore, torna ai tuoi annunci e riapri la scheda corretta.
+            </p>
+          </div>
+
+          <div class="action-row">
+            <span style="color: var(--muted-text); font-weight: 700;">Utente autenticato: giulia.r@example.com</span>
+            <div class="action-row-right">
+              <button class="btn btn-outline">Torna alla dashboard</button>
+              <button class="btn btn-primary">Vai ai miei annunci</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

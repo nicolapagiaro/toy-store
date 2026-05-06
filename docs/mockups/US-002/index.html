@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-002 - Modifica annuncio (proprietario)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <a class="ghost-link" href="./dettaglio-aggiornato.html">Vedi dettaglio aggiornato</a>
+      </header>
+
+      <div class="layout-grid">
+        <main>
+          <section class="panel hero-panel">
+            <h2 class="hero-title">Modifica annuncio pubblicato</h2>
+            <p class="hero-subtitle">
+              Stai modificando un annuncio di tua proprieta (#TS-2026-0017). Le regole di validazione sono identiche al flusso di creazione:
+              campi obbligatori + almeno una foto valida.
+            </p>
+            <div class="chip-row">
+              <span class="chip chip-owner">Owner verificato: Profilo "Giulia R."</span>
+              <span class="chip chip-validation">Stesse regole del "Nuovo annuncio"</span>
+            </div>
+          </section>
+
+          <section class="panel form-panel">
+            <h3 class="section-title">Dettagli modificabili</h3>
+
+            <div class="form-section">
+              <h4 class="section-heading">Dati base</h4>
+              <div class="form-grid">
+                <div class="field field-full">
+                  <label for="titolo">Titolo <span class="required">*</span></label>
+                  <input id="titolo" value="Triciclo evolutivo 3 in 1 con cestino e cappottina" />
+                </div>
+                <div class="field field-full">
+                  <label for="descrizione">Descrizione <span class="required">*</span></label>
+                  <textarea id="descrizione">Aggiornato: aggiunto anche cappottina parasole e campanello. Sempre in ottime condizioni, pronto per ritiro in zona Niguarda.</textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4 class="section-heading">Classificazione</h4>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="fasciaEta">Fascia d'eta <span class="required">*</span></label>
+                  <select id="fasciaEta">
+                    <option>0-2 anni</option>
+                    <option selected>3-5 anni</option>
+                    <option>6-8 anni</option>
+                    <option>9-12 anni</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="condizione">Condizione <span class="required">*</span></label>
+                  <select id="condizione">
+                    <option>Come nuovo</option>
+                    <option selected>Ottime condizioni</option>
+                    <option>Buone condizioni</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4 class="section-heading">Foto esistenti + nuove foto</h4>
+              <p class="hero-subtitle" style="margin-bottom: 6px;">
+                Puoi tenere, rimuovere o sostituire le foto gia caricate e aggiungerne di nuove prima del salvataggio.
+              </p>
+              <div class="photo-grid">
+                <div class="photo-slot photo-main">
+                  <span class="status-pill pill-existing">Esistente</span>
+                  <strong>Foto principale</strong>
+                  <span>Tieni</span>
+                </div>
+                <div class="photo-slot photo-remove">
+                  <span class="status-pill pill-remove">Da rimuovere</span>
+                  <strong>Dettaglio ruota</strong>
+                  <span>Rimuovi al salvataggio</span>
+                </div>
+                <div class="photo-slot photo-new">
+                  <span class="status-pill pill-new">Nuova</span>
+                  <strong>Cappottina aperta</strong>
+                  <span>Upload completato</span>
+                </div>
+                <div class="photo-slot">
+                  <span class="status-pill pill-new">Aggiungi</span>
+                  <strong>+ Carica foto</strong>
+                  <span>JPG / PNG</span>
+                </div>
+              </div>
+              <div class="info-box">
+                Salvataggio in corso... upload 1 nuova foto, rimozione 1 foto, persistenza metadati annuncio.
+              </div>
+            </div>
+
+            <div class="action-row">
+              <span style="color: var(--muted-text); font-weight: 700;">Ultima modifica bozza: oggi, 12:27</span>
+              <div class="action-row-right">
+                <button class="btn btn-outline">Annulla</button>
+                <button class="btn btn-disabled">Salvataggio...</button>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <aside>
+          <section class="panel side-card">
+            <h3 class="side-title">Ownership & sicurezza</h3>
+            <ul class="hint-list">
+              <li>Solo il proprietario puo aprire questa schermata</li>
+              <li>Controllo owner lato server prima del submit</li>
+              <li>Audit log delle modifiche su annuncio</li>
+            </ul>
+          </section>
+
+          <section class="panel side-card">
+            <h3 class="side-title">Anteprima post-update</h3>
+            <article class="preview-tile">
+              <div class="preview-media"></div>
+              <div class="preview-body">
+                <div class="badge-row">
+                  <span class="badge badge-secondary">3-5 anni</span>
+                  <span class="badge badge-accent">Ottime condizioni</span>
+                </div>
+                <strong>Triciclo evolutivo 3 in 1 con cestino e cappottina</strong>
+                <p style="margin: 8px 0 0; color: var(--muted-text); font-size: 0.9rem;">
+                  Le modifiche saranno visibili subito dopo il redirect sul dettaglio.
+                </p>
+              </div>
+            </article>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-002 - Modale conferma modifiche</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 24, 38, 0.36);
+        display: grid;
+        place-items: center;
+        padding: 20px;
+      }
+
+      .modal {
+        width: min(560px, 100%);
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-soft);
+        padding: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+      </header>
+      <section class="panel hero-panel">
+        <h2 class="hero-title">Background: modifica annuncio</h2>
+        <p class="hero-subtitle">Questa vista mostra il modal usato prima del salvataggio definitivo.</p>
+      </section>
+    </div>
+
+    <div class="overlay">
+      <div class="modal">
+        <h3 style="margin: 0 0 8px; font-size: 1.4rem;">Confermi aggiornamento annuncio?</h3>
+        <p style="margin: 0; color: var(--muted-text);">
+          Stai per salvare 4 modifiche testuali e aggiornare la galleria foto (1 nuova, 1 rimossa).
+          Dopo il salvataggio verrai reindirizzato al dettaglio aggiornato.
+        </p>
+        <div class="chip-row" style="margin-top: 14px;">
+          <span class="chip chip-owner">Owner verificato</span>
+          <span class="chip chip-validation">Validazione server pronta</span>
+        </div>
+        <div class="action-row" style="margin-top: 18px;">
+          <span style="color: var(--muted-text); font-weight: 700;">ID annuncio #TS-2026-0017</span>
+          <div class="action-row-right">
+            <button class="btn btn-outline">Rivedi modifiche</button>
+            <a class="btn btn-primary" href="./dettaglio-aggiornato.html" style="text-decoration: none;">Conferma e salva</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
