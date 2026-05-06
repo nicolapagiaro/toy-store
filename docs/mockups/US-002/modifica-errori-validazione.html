@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US-002 - Modifica annuncio (errori validazione)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-nav">
+        <h1 class="brand">Toy Store</h1>
+        <a class="ghost-link" href="./index.html">Torna alla modifica</a>
+      </header>
+
+      <div class="layout-grid">
+        <main>
+          <section class="panel hero-panel">
+            <h2 class="hero-title">Correggi prima di salvare</h2>
+            <p class="hero-subtitle">
+              Le modifiche non sono state salvate. Il motore di validazione applica le stesse regole del flusso di creazione annuncio.
+            </p>
+            <div class="error-box">
+              Errori bloccanti: titolo troppo corto, descrizione incompleta, nessuna foto valida attiva dopo la rimozione.
+            </div>
+          </section>
+
+          <section class="panel form-panel">
+            <h3 class="section-title">Modifica annuncio #TS-2026-0017</h3>
+
+            <div class="form-section">
+              <h4 class="section-heading">Dati base</h4>
+              <div class="form-grid">
+                <div class="field field-full">
+                  <label for="titolo">Titolo <span class="required">*</span></label>
+                  <input id="titolo" class="error-input" value="Triciclo" />
+                  <span class="inline-error">Il titolo deve contenere almeno 12 caratteri descrittivi.</span>
+                </div>
+                <div class="field field-full">
+                  <label for="descrizione">Descrizione <span class="required">*</span></label>
+                  <textarea id="descrizione" class="error-input">Buono stato.</textarea>
+                  <span class="inline-error">Aggiungi dettagli su condizione reale, accessori e ritiro.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4 class="section-heading">Foto del giocattolo</h4>
+              <div class="photo-grid">
+                <div class="photo-slot photo-remove">
+                  <span class="status-pill pill-remove">Da rimuovere</span>
+                  <strong>Foto principale</strong>
+                  <span>Non restera alcuna foto valida</span>
+                </div>
+                <div class="photo-slot">
+                  <span class="status-pill pill-new">Aggiungi</span>
+                  <strong>+ Carica nuova foto</strong>
+                  <span>Obbligatoria almeno 1</span>
+                </div>
+              </div>
+              <div class="error-box">
+                Prima del salvataggio deve restare almeno una foto attiva. Se rimuovi la principale, caricane subito un'altra.
+              </div>
+            </div>
+
+            <div class="action-row">
+              <span style="color: #b42318; font-weight: 800;">Salvataggio bloccato dalla validazione server</span>
+              <div class="action-row-right">
+                <button class="btn btn-outline">Annulla</button>
+                <a class="btn btn-primary" href="./dettaglio-aggiornato.html" style="text-decoration: none;">Correggi e salva</a>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <aside>
+          <section class="panel side-card">
+            <h3 class="side-title">Regole condivise US-001 / US-002</h3>
+            <ul class="hint-list">
+              <li>Titolo, descrizione, fascia eta, condizione, localita obbligatori</li>
+              <li>Almeno 1 foto sempre presente</li>
+              <li>Validazione lato client e lato server coerente</li>
+            </ul>
+          </section>
+
+          <section class="panel side-card">
+            <h3 class="side-title">Suggerimento</h3>
+            <p style="margin: 0; color: var(--muted-text);">
+              Mantieni una foto principale "safe" durante le modifiche, poi sostituiscila solo dopo upload della nuova.
+            </p>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
