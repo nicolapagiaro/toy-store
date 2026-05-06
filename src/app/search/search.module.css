@@ -1,0 +1,359 @@
+/* ─── Design tokens ─────────────────────────────────────────────────── */
+:root {
+  --bg: #fff9f5;
+  --surface: #ffffff;
+  --text: #2d3748;
+  --muted-text: #667085;
+  --primary: #ff9aa2;
+  --secondary: #b5ead7;
+  --accent: #ffd9a8;
+  --lavender: #c7ceea;
+  --purple-soft: #f5e6ff;
+  --danger: #fc8181;
+  --ok: #4fd1c5;
+  --warn: #f8c86b;
+  --border: rgba(45, 55, 72, 0.12);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --shadow-soft: 0 16px 40px rgba(255, 154, 162, 0.16);
+  --shadow-card: 0 10px 24px rgba(45, 55, 72, 0.08);
+}
+
+/* ─── Page shell ─────────────────────────────────────────────────────── */
+.pageShell {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+/* ─── Top nav ────────────────────────────────────────────────────────── */
+.topNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.brand {
+  margin: 0;
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.3px;
+  background: linear-gradient(120deg, var(--primary), var(--lavender), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ghostLink {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+/* ─── Search panel ───────────────────────────────────────────────────── */
+.searchPanel {
+  background: linear-gradient(150deg, rgba(255, 154, 162, 0.18), rgba(199, 206, 234, 0.12)), var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+
+.searchTitle {
+  margin: 0 0 6px;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+}
+
+.searchSubtitle {
+  margin: 0 0 18px;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.searchBar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.searchInputWrap {
+  flex: 1 1 260px;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-text);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fefefe;
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  padding: 12px 13px 12px 40px;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: rgba(255, 154, 162, 0.7);
+  box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.2);
+}
+
+.filterSelect {
+  flex: 0 1 200px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fefefe;
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  padding: 12px 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  border-color: rgba(255, 154, 162, 0.7);
+  box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.2);
+}
+
+.btnSearch {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: linear-gradient(120deg, var(--primary), #ffaeb5);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+  white-space: nowrap;
+}
+
+/* ─── Active filters ─────────────────────────────────────────────────── */
+.activeFilters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-size: 0.82rem;
+  color: var(--muted-text);
+  font-weight: 700;
+}
+
+.filterChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(199, 206, 234, 0.35);
+  border: 1px solid rgba(199, 206, 234, 0.6);
+  color: var(--text);
+}
+
+.filterChipRemove {
+  cursor: pointer;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.filterChipRemove:hover {
+  color: var(--danger);
+}
+
+/* ─── Results header ─────────────────────────────────────────────────── */
+.resultsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.resultsCount {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.resultsCount span {
+  color: var(--muted-text);
+  font-weight: 400;
+}
+
+/* ─── Results grid ───────────────────────────────────────────────────── */
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ─── Ad card ────────────────────────────────────────────────────────── */
+.adCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.adCard:hover {
+  box-shadow: 0 16px 36px rgba(45, 55, 72, 0.13);
+  transform: translateY(-2px);
+}
+
+.adCardMedia {
+  height: 160px;
+  background:
+    linear-gradient(130deg, rgba(255, 154, 162, 0.33), rgba(255, 217, 168, 0.33)),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0 10px, rgba(255, 255, 255, 0.25) 10px 20px);
+  position: relative;
+}
+
+.adCardMedia img,
+.adCardMedia span {
+  border-radius: inherit;
+}
+
+.adCardMedia > * {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.adCardBody {
+  padding: 12px 14px 14px;
+}
+
+.adBadgeRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.badge {
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.badgeAge {
+  background: rgba(181, 234, 215, 0.42);
+}
+
+.badgeCondition {
+  background: rgba(255, 217, 168, 0.48);
+}
+
+.adTitle {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.adCity {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted-text);
+}
+
+/* ─── Empty state ────────────────────────────────────────────────────── */
+.emptyState {
+  text-align: center;
+  padding: 56px 24px 64px;
+}
+
+.emptyIcon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.emptyTitle {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+}
+
+.emptySubtitle {
+  margin: 0 0 24px;
+  color: var(--muted-text);
+  max-width: 42ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnOutline {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 11px 20px;
+  font: inherit;
+  font-weight: 700;
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .resultsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .searchBar {
+    flex-direction: column;
+  }
+
+  .filterSelect {
+    flex: 1 1 auto;
+  }
+}

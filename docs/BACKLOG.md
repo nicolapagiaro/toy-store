@@ -129,6 +129,7 @@ After implementing this story, the user can: sospendere e ripubblicare un annunc
 #### US-005: Cercare annunci con parola chiave e filtri
 
 **Epic:** EP-002 | **Priority:** HIGH | **Story Points:** 3
+**Status:** REVIEW
 
 **Story**
 As genitore in cerca di giocattoli,
