@@ -36,6 +36,12 @@ prisma/
   schema.prisma         # User model (UUID, supabaseId, email, name, image)
 ```
 
+## Editing Boundaries
+
+- Do not modify files inside `docs/mockups/` when implementing product features or user stories.
+- Treat `docs/mockups/` as reference-only design material unless the user explicitly asks to edit mockup files.
+- In particular, do not change the mockup sub-project under `docs/mockups/toy-store-core/` during implementation tasks.
+
 ## Common Tasks
 
 ### Add a shadcn/ui component
